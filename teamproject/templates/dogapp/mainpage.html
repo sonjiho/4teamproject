@@ -25,7 +25,7 @@
     <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{% static 'static/style.css' %}" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet">
 
 </head>
 
@@ -35,17 +35,16 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="mainpage.html">Gp<span>.</span></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="mainpage.html"><span>어디가시개 데려가시개</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="mainpage.html" class="logo me-auto me-lg-0"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">어디가시개</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -177,7 +176,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="image col-lg-6" style="background-image: url({% static 'img/features.jpg' %};)" data-aos="fade-right"></div>
+          <div class="image col-lg-6" style="background-image: url(img/features.jpg);" data-aos="fade-right"></div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
@@ -534,7 +533,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="{% static 'img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <img src="{% static 'img/testimonials/testimonials-4.jpg' %}"  class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <p>
