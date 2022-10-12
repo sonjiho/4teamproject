@@ -1,21 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Question
 from django.utils import timezone
-from .forms import QuestionForm, AnswerForm
+from .forms import QuestionForm
+from django.db import models
 
 
 def qna(request):
     """ 목록 출력"""
     question_list = Question.objects.order_by('-create_date')
     context = {'question_list': question_list}
-    return render(request, 'dogapp/question_list.html', context)
+    return render(request, 'dogapp/qna_list.html', context)
 
 
 def detail(request, question_id):
     """질문 내용 출력"""
     question = get_object_or_404(Question, pk=question_id)
+    answers=question.answer_set
+    print(answers)
     context = {'question': question}
-    return render(request, 'dogapp/question_detail.html', context)
+    return render(request, 'dogapp/qna_detail.html', context)
 
 
 def question_create(request):
@@ -31,21 +34,13 @@ def question_create(request):
         form = QuestionForm()
     context = {'form': form}
     print(form)
-    return render(request, 'dogapp/question_form.html', context)
+    return render(request, 'dogapp/qna_form.html', context)
 
 
 def answer_create(request, question_id):
+
     """질문 답변 등록"""
-    question = get_object_or_404(Question, pk=question_id)
-    if request.method == "POST":
-        form = AnswerForm(request.POST)
-        if form.is_valid():
-            answer = form.save(commit=False)
-            answer.create_date = timezone.now()
-            answer.question = question
-            answer.save()
-            return redirect('qnaapp:detail', question_id=question.id)
-        else:
-            form = AnswerForm()
-        context = {'question': question, 'form': form}
-        return render(request, 'dogapp/question_detail.html', context)
+    question= get_object_or_404(Question, pk=question_id)
+    question.answer_set.create(content=request.POST.get('content'), create_date=timezone.now())
+    return redirect('qnaapp:detail', question_id=question.id)
+
