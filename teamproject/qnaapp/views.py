@@ -9,7 +9,7 @@ def qna(request):
     """ 목록 출력"""
     question_list = Question.objects.order_by('-create_date')
     context = {'question_list': question_list}
-    return render(request, '/dogapp/qna_list.html', context)
+    return render(request, 'dogapp/qna_list.html', context)
 
 
 def detail(request, question_id):
@@ -18,7 +18,7 @@ def detail(request, question_id):
     answers=question.answer_set
     print(answers)
     context = {'question': question}
-    return render(request, '/dogapp/qna_detail.html', context)
+    return render(request, 'dogapp/qna_detail.html', context)
 
 
 def question_create(request):
@@ -34,7 +34,7 @@ def question_create(request):
         form = QuestionForm()
     context = {'form': form}
     print(form)
-    return render(request, '/dogapp/qna_form.html', context)
+    return render(request, 'dogapp/qna_form.html', context)
 
 
 def answer_create(request, question_id):
