@@ -17,7 +17,7 @@
           <tr>
               <td>{{  forloop.counter  }}</td>
               <td>
-                  <a href="{% url 'qnaapp:detail' question.id %}">
+                  <a style="color: #000000;" href="{% url 'qnaapp:detail' question.id %}">
                   {{  question.subject  }}
                   </a>
               </td>
@@ -32,10 +32,10 @@
           </tr>
           {% endif %}
           </tbody>
-          <a href="{% url 'qnaapp:question_create' %}" class="btn btn-primary">
-              질문하시개
-          </a>
       </table>
+    <a href="{% url 'qnaapp:question_create' %}" class="btn btn-primary">
+          질문하시개
+   </a>
   </div>
 </section>
 {% endblock %}
