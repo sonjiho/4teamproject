@@ -1,0 +1,76 @@
+{% extends 'sort_base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="/appfordog/">어디가시개<span>데려가시개</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="sort_base.html" class="logo me-auto me-lg-0"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/appfordog/"><span>반려 동반 가능 식당</span></a></li> >>
+          <li><a class="nav-link scrollto" href="#feartures">{{  result.m1  }}</a></li> >>
+          <li><a class="nav-link scrollto" href="#feartures">서울특별시</a></li>
+          <li><a class="nav-link scrollto" href="#feartures">가고 싶은 곳 다 고르개!</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#cta">QnA</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#login" class="get-started-btn scrollto">Log In</a>
+      <a href="#signin" class="get-started-btn scrollto">Sign In</a>
+    </div>
+  </header><!-- End Header -->
+
+<section id="radiosort1" class="d-flex align-items-center justify-content-center">
+<div class="container" data-aos="fade-up">
+
+  <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+    <div class="col-xl-6 col-lg-8">
+      <h1>인천광역시<span>!</span></h1>
+      <h2>스크롤을 내려 주시개</h2>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<main id="main">
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>시/군/구</h2>
+      <p>가고 싶은 곳 다 고르개!</p>
+    </div>
+
+    <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-filters">
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="중구">중구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="동구">동구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="미추홀구">미추홀구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="연수구">연수구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="남동구">남동구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="부평구">부평구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="계양구">계양구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="서구">서구</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="남동구-강화군">남동구-강화군</li>
+          <li><input type="checkbox" style="width: 30px; height: 30px;" value="남동구-옹진군">남동구-옹진군</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- End Portfolio Section -->
+
+{% endblock %}
