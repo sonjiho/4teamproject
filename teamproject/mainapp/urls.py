@@ -11,5 +11,8 @@ urlpatterns = [
     path('sort_m1_4/', sort_m1_4, name='sort_m1_4'),
     path('sort_m1_5/', sort_m1_5, name='sort_m1_5'),
     path('sort_r2/', sort_r2, name='sort_r2'),
-    path('sort_m2/', sort_m2, name='sort_m2'),
+    path('sort_m2_1/', sort_m2_1, name='sort_m2_1'),
+    path('sort_m2_2/', sort_m2_2, name='sort_m2_2'),
+    path('sort_m2_3/', sort_m2_3, name='sort_m2_3'),
+    path('sort_end/', sort_end, name='sort_end'),
 ]

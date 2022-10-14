@@ -535,7 +535,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #ffde9e;
+  background: #c6e1ff;
   margin: 4px 10px;
 }
 
@@ -666,7 +666,7 @@ section {
 }
 
 .features .icon-box h4 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   margin: 5px 0 10px 60px;
 }
@@ -701,63 +701,46 @@ section {
   transition: 0.5s;
   margin-top: 10px;
   border: 2px solid #c6e1ff;
+  color: #000000;
+  margin-left: 30px;
+}
+
+.features .features-btn:hover {
+  background: #c6e1ff;
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Radiosort2
---------------------------------------------------------------*/
-.radiosort2 .icon-box {
-  text-align: center;
-  border: 1px solid #ebebeb;
-  padding: 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background: #fff;
+.features .multi {
+    column-width: 300px;
 }
 
-.radiosort2 .icon-box .icon {ç
+/*--------------------------------------------------------------
+# Radiosort
+--------------------------------------------------------------*/
+.radiosort .icon-box {
+  text-align: center;
+  border: 1px solid #c6e1ff;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background-color: #fff;
+  color: #000000;
   margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #c6e1ff;
+  width: 300px;
+  height: 200px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.radiosort2 .icon-box .icon i {
-  color: #151515;
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
-}
-
-.radiosort2 .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 24px;
-}
-
-.radiosort2 .icon-box h4 a {
-  color: #151515;
+  font-size: 32px;
   transition: ease-in-out 0.3s;
 }
 
-.radiosort2 .icon-box h4 a:hover {
-  color: #c6e1ff;
-}
-
-.radiosort2 .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.radiosort2 .icon-box:hover {
-  border-color: #fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+.radiosort .icon-box:hover {
+  background-color: #c6e1ff;
+  color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.8);
   transform: translateY(-10px);
 }
 
@@ -818,20 +801,22 @@ section {
   cursor: pointer;
   display: inline-block;
   padding: 8px 15px 10px 15px;
-  font-size: 14px;
+  font-size: 20px;
+  vertical-align: center;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
   color: #444444;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
+  border: 1px solid #ebebeb;
   border-radius: 3px;
 }
 
 .portfolio #portfolio-filters li:hover,
 .portfolio #portfolio-filters li.filter-active {
-  color: #151515;
-  background: #c6e1ff;
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(21, 21, 21, 0.08);
 }
 
 .portfolio #portfolio-filters li:last-child {
@@ -922,6 +907,32 @@ section {
 .portfolio .portfolio-wrap:hover .portfolio-info {
   opacity: 1;
 }
+
+.portfolio .multi{
+    column-width: 300px;
+}
+
+.portfolio .portfolio-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 10px;
+  border: 2px solid #c6e1ff;
+  color: #000000;
+  margin-left: 30px;
+}
+
+.portfolio .portfolio-btn:hover {
+  background: #c6e1ff;
+  color: #fff;
+}
+
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
