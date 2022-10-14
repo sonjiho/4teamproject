@@ -1,0 +1,77 @@
+{% extends 'sort_base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="/appfordog/">어디가시개<span>데려가시개</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="sort_base.html" class="logo me-auto me-lg-0"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/appfordog/">{{ result.sort_m1 }}</a></li>
+          <li><a class="nav-link scrollto" href="/appfordog/sort_m1/">{{ result.sort_r1 }}</a></li>
+          <li><a class="nav-link scrollto" href="#radiosort2">어느 지역으로 가개?</a></li>
+          <li><a class="nav-link scrollto" href="#multisort2">그 지역 어디로 가개?</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#login" class="get-started-btn scrollto" style="margin-left: 30px; margin-right: 30px;">Log In</a>
+      <a href="#signin" class="get-started-btn scrollto">Sign In</a>
+    </div>
+  </header><!-- End Header -->
+
+
+  <section id="radiosort1" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Q. 어디 놀러 가개<span>?</span></h1>
+          <h2>하나만 고를 수 있개</h2>
+        </div>
+      </div>
+
+      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3><a href="/appfordog/sort_m1_1/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">반려 동반 가능 식당</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3><a href="/appfordog/sort_m1_2/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">반려 동반 가능 카페</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3><a href="/appfordog/sort_m1_3/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">애견 카페</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3><a href="/appfordog/sort_m1_4/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">반려 동반 가능 숙소</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3><a href="/appfordog/sort_m1_5/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">반려 동반 가능 여행지</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
+          <div class="icon-box">
+            <h3 ><a href="/appfordog/sort_m1_6/"><img src="{% static 'img/one_1.png' %}" style="width: 20px; margin-right: 15px;">반려 동반 가능 휴게소</a></h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}
