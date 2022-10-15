@@ -1060,7 +1060,7 @@ section {
 }
 
 .counts .image {
-  background: url("/static/img/counts-img.jpg") center center no-repeat;
+  background: url("/static/img/car_dog4.jpg") right top no-repeat;
   background-size: cover;
   min-height: 400px;
 }
