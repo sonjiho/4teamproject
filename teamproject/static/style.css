@@ -711,7 +711,7 @@ section {
 }
 
 .features .multi {
-    column-width: 300px;
+    column-count: 2;
 }
 
 /*--------------------------------------------------------------
@@ -909,7 +909,7 @@ section {
 }
 
 .portfolio .multi{
-    column-width: 300px;
+    column-count: 6;
 }
 
 .portfolio .portfolio-btn {
@@ -1490,6 +1490,7 @@ section {
   background: #151515;
   border-bottom: 1px solid #222222;
   padding: 60px 0 30px 0;
+  column-count: 2;
 }
 
 #footer .footer-top .footer-info {
@@ -1592,29 +1593,57 @@ section {
   border-radius: 4px;
 }
 
-#footer .footer-top .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: calc(100% - 110px);
+
+#footer .footer-top .footer-newsletter h3 {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: -2px;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
+#footer .footer-top .footer-newsletter h3 span {
+  color: #c6e1ff;
+}
+
+#footer .footer-top .footer-newsletter form .info {
+  width: 100%;
+  background: #fff;
+}
+
+#footer .footer-top .footer-newsletter form .info i {
+  font-size: 20px;
   background: #c6e1ff;
-  color: #151515;
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
+  color: #c6e1ff;
+  float: left;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #ffcd6b;
+#footer .footer-top .footer-newsletter form .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #151515;
+}
+
+#footer .footer-top .footer-newsletter form .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #484848;
+}
+
+#footer .footer-top .footer-newsletter form .info .email,
+.contact .info .phone {
+  margin-top: 40px;
 }
 
 #footer .copyright {
