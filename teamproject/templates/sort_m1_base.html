@@ -1,0 +1,23 @@
+{% extends 'sort_base.html' %}
+
+{% load static %}
+
+{% block content2 %}
+<!-- ======= Features Section ======= -->
+<section id="features" class="features" style="padding-top: 50px;">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="image col-lg-6" style="background-image: url(/static/img/dog4.jpg);" data-aos="fade-right"></div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          {% block content4 %}
+          {% endblock %}
+        <br><br>
+        <div style="text-align: center;">
+             <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
+             <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- End Features Section -->
+{% endblock %}
