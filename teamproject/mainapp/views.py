@@ -14,7 +14,7 @@ def sort_m1_1(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -23,10 +23,10 @@ def sort_m1_1(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1},
-                'result_m1': {result_m1_1 },
-                'result_r2': {result_r2 },
-                'result_m2':{result_m2_1},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_1.html', context)
@@ -38,7 +38,7 @@ def sort_m1_2(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -47,10 +47,10 @@ def sort_m1_2(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_2.html', context)
@@ -62,7 +62,7 @@ def sort_m1_3(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -71,13 +71,13 @@ def sort_m1_3(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
-    return render(request, 'dogapp/sort_m1_3.html', context)
+        return render(request, 'dogapp/sort_m1_3.html', context)
 
 
 def sort_m1_4(request):
@@ -86,7 +86,7 @@ def sort_m1_4(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -95,10 +95,10 @@ def sort_m1_4(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_4.html', context)
@@ -109,7 +109,7 @@ def sort_m1_5(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -118,10 +118,10 @@ def sort_m1_5(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_5.html', context)
@@ -133,7 +133,7 @@ def sort_r2(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -142,10 +142,10 @@ def sort_r2(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_r2.html', context)
@@ -157,7 +157,7 @@ def sort_m2_1(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -166,10 +166,10 @@ def sort_m2_1(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_1.html', context)
@@ -181,7 +181,7 @@ def sort_m2_2(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -190,10 +190,10 @@ def sort_m2_2(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_2.html', context)
@@ -205,7 +205,7 @@ def sort_m2_3(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -214,10 +214,10 @@ def sort_m2_3(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_3.html', context)
@@ -229,7 +229,7 @@ def sort_end(request):
     result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_m1 = request.GET.getlist("result_m1 ","")
         for r in result_m1:
             result_m1_1 += r + " "
         result_r2=request.GET.get('result_r2',"")
@@ -238,10 +238,10 @@ def sort_end(request):
             result_m2_1 += f+ " "
         context = {
             'results': {
-                'result_r1': {result_r1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m1': {result_m1_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_r2': {result_r2 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
-                'result_m2':{result_m2_1 +'&nbsp;&nbsp;>&nbsp;&nbsp;'},
+                'result_r1': result_r1 ,
+                'result_m1': result_m1_1 ,
+                'result_r2': result_r2,
+                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_end.html', context)

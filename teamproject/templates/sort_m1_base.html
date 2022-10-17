@@ -23,17 +23,20 @@
   </div>
 </section><!-- End Features Section -->
 
-<form method="GET" style="display: none;">
-    <input type="text" name="result_m1">
-</form>
-<script type = "text/javascript">
-    var callBack = function(event){
-        var clickTarget = $(event.currentTargets);
-        var text = clickTarget.text();
-        $('[name=result_m1]').val(text);
+<script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <form id="dataform" method="get" action="" style="display: none;">
+    <input type="submit" style="display: none;">
+    </form>
+    <script type="text/javascript">
+    var callBack = function(event);
+        var submitTag = .find('input');
+        var url = submitTag.attr('data-href');
+        var form = $('#dataform');
+        form.attr('action', url);
+
+        $('[name=result_r1]').val(text);
         $('form').submit();
     };
-    $('#multisort1 div').on('click', callBack);
+    $('#radiosort1 div.icon-box').on('click', callBack);
 </script>
-
 {% endblock %}
