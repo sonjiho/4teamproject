@@ -18,4 +18,17 @@
       </div>
   </div>
 </section><!-- End Portfolio Section -->
+
+  <form method="GET" style="display: none;">
+      <input type="text" name="result_m2"/>
+  </form>
+  <script type = "text/javascript">
+      var callBack = function(event){
+        var clickTarget = $(event.currentTargets);
+        var text = clickTarget.text();
+        $('[name=result_m2]').val(text);
+        $('form').submit();
+      };
+      $('#portfolio div').on('click', callBack);
+  </script>
 {% endblock %}

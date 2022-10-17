@@ -23,4 +23,18 @@
       </div>
     </div>
   </section><!-- End Services Section -->
+
+  <form method="GET" style="display: none;">
+      <input type="text" name="result_r2"/>
+  </form>
+  <script type = "text/javascript">
+      var callBack = function(event){
+        var clickTarget = $(event.currentTarget);
+        var text = clickTarget.text();
+        $('[name=result_r2]').val(text);
+        $('form').submit();
+      };
+      $('#radiosort div).on('click', callBack);
+  </script>
+
 {% endblock %}
