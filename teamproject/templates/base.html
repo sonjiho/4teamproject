@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+    </script>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     {% load static %}
@@ -20,6 +22,7 @@
     <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="{% static 'style.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
   </head>
 
   <body>
@@ -29,10 +32,10 @@
         <h1 class="logo me-auto me-lg-0"><a href="/appfordog/">어디가시개&nbsp<span>데려가시개</span></a></h1>
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-            <li><a class="nav-link scrollto " href="#feartures">{{  result_r1  }}</a></li>&nbsp;&nbsp;>>&nbsp;&nbsp;
-            <li><a class="nav-link scrollto " href="#feartures">{{  result_m1  }}</a></li>&nbsp;&nbsp;>>&nbsp;&nbsp;
-            <li><a class="nav-link scrollto " href="#feartures">{{  result_r2  }}</a></li>&nbsp;&nbsp;>>&nbsp;&nbsp;
-            <li><a class="nav-link scrollto " href="#feartures">{{  result_m2  }}</a></li>&nbsp;&nbsp;>>&nbsp;&nbsp;
+            <li><a class="nav-link scrollto " href="#feartures">{{  result_r1  }}</a></li>
+            <li><a class="nav-link scrollto " href="#feartures">{{  result_m1  }}</a></li>
+            <li><a class="nav-link scrollto " href="#feartures">{{  result_r2  }}</a></li>&nbsp;
+            <li><a class="nav-link scrollto " href="#feartures">{{  result_m2  }}</a></li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
             <li><a class="nav-link scrollto" href="#cta">QnA</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -44,7 +47,6 @@
       </div>
     </header>
     <!-- End Header -->
-
     {% block content1 %}
     {% endblock %}
 
@@ -80,7 +82,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="{% static 'img/team/team-2.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'img/team/team-2.jpeg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -118,6 +120,21 @@
       </div>
   </section><!-- End Team Section -->
 
+        <!-- ======= Cta Section ======= -->
+ <section id="cta" class="cta">
+   <div class="container" data-aos="zoom-in">
+
+     <div class="text-center">
+       <h3>QnA</h3>
+       <br><br>
+       <p style="color: #fff;">사이트 서비스 향상을 위한 제안<br>공유해주고 싶은 좋은 장소 제안<br>사이트 이용 중 생긴 불편 사항<br>사이트 이용 중 생긴 궁금증</p>
+       <br>
+       <a class="cta-btn" href="/appfordog/qna/">모두 모두 말해주시개!</a>
+     </div>
+
+   </div>
+ </section>
+
       <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
     <div class="container" data-aos="zoom-in">
@@ -136,16 +153,16 @@
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
+          </div><!-- End testimonial item -->$
 
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <img src="{% static 'img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+              <img src="{% static 'img/testimonials/testimonials-2.jpeg' %}" class="testimonial-img" alt="">
               <h3>손지호</h3>
               <h4>팀 원</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                지호님 소감
+                처음 해보는 실습이라 많이 두려웠는데 열정 넘치는 팀원분들 덕분에 포기 하지 않을 수 있었습니다. 감사 합니다!
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
@@ -158,7 +175,7 @@
               <h4>팀 원</h4>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                소감소감소감
+                수업 시간에 배운 것들이 실제로 적용했을 때 제가 생각 대로 구현되면 정말 큰 짜릿했습니다! 언제나 열심히 묵묵히 자신의 역할에 최선을 다해준 우리 팀 덕분에 정말 즐겁게 코딩했습니다! 성취감 최고!
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
@@ -179,23 +196,23 @@
           <img src="{% static 'img/dalgom.jpeg'  %}" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100" style="padding-left: 90px;, padding-right: 60px; margin-top: 40px;">
-          <h3 style="color : #000000;">프로젝트 수행도구</h3><br><br>
-          <p class="fst-italic" style="color : #000000;">
+          <h3 style="color : #000000; font-size: 28pt;">프로젝트 수행도구</h3><br><br>
+          <p class="fst-italic" style="color : #000000; font-size: 16pt;">
             Back-end<br>
-            <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> Django<br>
+            <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;;"></i> Django<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> Python<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> AJAX<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> SQLite<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> Google Maps Platform<br>
           </p><br>
-          <p class="fst-italic" style="color : #000000;">
+          <p class="fst-italic" style="color : #000000; font-size: 16pt;">
             Front-end<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> HTML5<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> CSS5<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> JavaScript<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> Bootstrap<br>
           </p><br>
-          <p class="fst-italic" style="color : #000000;">
+          <p class="fst-italic" style="color : #000000; font-size: 16pt;">
             Collaboration tool<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> Zoom<br>
             <i class="ri-check-double-line" style="color: #c6e1ff; font-style: bold;"></i> GitHub<br>

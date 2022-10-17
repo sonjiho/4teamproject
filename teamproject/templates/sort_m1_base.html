@@ -12,12 +12,28 @@
           {% block content4 %}
           {% endblock %}
         <br><br>
-        <div style="text-align: center;">
-             <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
-             <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+        <div id="multisort1">
+            <div style="text-align: center;">
+                 <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
+                 <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </section><!-- End Features Section -->
+
+  <form method="GET" style="display: none;">
+      <input type="text" name="result_m1"/>
+  </form>
+  <script type = "text/javascript">
+      var callBack = function(event){
+        var clickTarget = $(event.currentTargets);
+        var text = clickTarget.text();
+        $('[name=result_m1]').val(text);
+        $('form').submit();
+      };
+      $('#multisort1 div').on('click', callBack);
+  </script>
+
 {% endblock %}
