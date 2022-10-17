@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Main page{% endblock %}
+
+{% block content1 %}
+    <section id="radiosort1" class="d-flex align-items-center justify-content-center">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-xl-6 col-lg-8">
+            <h1>{{  results.result_r1  }} {{  results.result_m1_1  }} {{  results.result_r2 }} {{  results.result_m2_1 }}</h1>
+            <h2>스크롤을 내려 주시개</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+      {% block content2 %}
+      {% endblock %}
+    </main>
+{% endblock %}

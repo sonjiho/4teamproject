@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}QnA{% endblock  %}
+
+{% block content1 %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="color: #4e4e4e; font-size: 40pt; font-weight: 600;">QnA</h2>
+          <ol>
+            <li><a href="/dogapp/mainpage.html" style="color: #000000;">Home</a></li>
+            <li style="color: #000000;">QnA</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+      {% block content3 %}
+      {% endblock %}
+  </main>
+{% endblock %}
