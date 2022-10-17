@@ -10,8 +10,14 @@
     <title>{% block title %}BASE TITLE{% endblock  %}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+
+     <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
     <!-- Vendor CSS Files -->
     <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,16 +32,17 @@
   </head>
 
   <body>
+
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center justify-content-lg-between">
         <h1 class="logo me-auto me-lg-0"><a href="/appfordog/">어디가시개&nbsp<span>데려가시개</span></a></h1>
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-            <li><a class="nav-link scrollto " href="#feartures">{{  results.result_r1  }}</a></li>
-            <li><a class="nav-link scrollto " href="#feartures">{{  results.result_m1_1  }}</a></li>
-            <li><a class="nav-link scrollto " href="#feartures">{{  results.result_r2  }}</a></li>&nbsp;
-            <li><a class="nav-link scrollto " href="#feartures">{{  results.result_m2_1  }}</a></li>
+            <li><a class="nav-link scrollto">{{  results.result_r1  }}</a></li>
+            <li><a class="nav-link scrollto">{{  results.result_m1_1  }}</a></li>
+            <li><a class="nav-link scrollto">{{  results.result_r2  }}</a></li>&nbsp;
+            <li><a class="nav-link scrollto">{{  results.result_m2_1  }}</a></li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
             <li><a class="nav-link scrollto" href="#cta">QnA</a></li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -53,14 +60,11 @@
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>일등하개 점수 좀 주개</h2>
           <p>Our Team</p>
         </div>
-
         <div class="row">
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
@@ -78,7 +82,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
@@ -96,7 +99,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
@@ -114,9 +116,7 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
   </section><!-- End Team Section -->
 
@@ -131,17 +131,14 @@
        <br>
        <a class="cta-btn" href="/appfordog/qna/">모두 모두 말해주시개!</a>
      </div>
-
    </div>
  </section>
 
       <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
     <div class="container" data-aos="zoom-in">
-
       <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide">
             <div class="testimonial-item">
               <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
@@ -154,7 +151,6 @@
               </p>
             </div>
           </div><!-- End testimonial item -->
-
           <div class="swiper-slide">
             <div class="testimonial-item">
               <img src="{% static 'img/testimonials/testimonials-2.jpeg' %}" class="testimonial-img" alt="">
@@ -167,7 +163,6 @@
               </p>
             </div>
           </div><!-- End testimonial item -->
-
           <div class="swiper-slide">
             <div class="testimonial-item">
               <img src="{% static 'img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
@@ -180,12 +175,10 @@
               </p>
             </div>
           </div><!-- End testimonial item -->
-
         </div>
         <div class="swiper-pagination"></div>
       </div>
-
-      </div>
+    </div>
   </section><!-- End Testimonials Section -->
 
   <!-- ======= About Section ======= -->
