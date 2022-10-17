@@ -1680,3 +1680,8 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+#map {
+  height: 600px;
+  width: 100%;
+}
