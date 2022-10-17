@@ -3,16 +3,16 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #c6e1ff;
+  color: #000000;
 }
 
 a {
-  color: #c6e1ff;
+  color: #000000;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffd584;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -736,42 +736,75 @@ section {
   color: #fff;
 }
 .features .multi {
-    column-count: 5;
+    column-count: 2;
 }
 /*--------------------------------------------------------------
-# Radiosort
+# Radiosort2
 --------------------------------------------------------------*/
-.radiosort .icon-box {
+.radiosort2 .container .column{
+ column-count: 3;
+}
+.radiosort2 .container .column .icon-box {
   text-align: center;
   border: 1px solid #c6e1ff;
-  padding: 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background-color: #fff;
-  color: #000000;
-  margin: 0 auto;
   width: 300px;
   height: 200px;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  font-weight: 700;
+  margin: auto;
+  font-size: 24px;
+}
+
+.radiosort2 .container .column .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: #ffc451;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 32px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.radiosort2 .container .column .icon-box .icon i {
+  color: #151515;
+  font-size: 28px;
   transition: ease-in-out 0.3s;
 }
-.radiosort .icon-box:hover {
-  background-color: #c6e1ff;
+
+.radiosort2 .container .column .icon-box a {
+  color: #151515;
+  transition: ease-in-out 0.3s;
+}
+
+.radiosort2 .container .column .icon-box a:hover {
   color: #fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.8);
+}
+
+radiosort2s .container .column .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.radiosort2 .container .column .icon-box:hover {
+  border-color: #fff;
+  color: #fff;
+  background: #c6e1ff;
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
+}
 }
 
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("/static/img/dog3.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("static/img/dog3.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -1083,7 +1116,7 @@ section {
 }
 
 .counts .image {
-  background: url("/static/img/car_dog4.jpg") right top no-repeat;
+  background: url("/static/img/car_dog1.jpg") center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
