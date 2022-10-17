@@ -156,7 +156,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-#  Get Started Button
+#  Get Startet Button
 --------------------------------------------------------------*/
 .get-started-btn {
   color: #fff;
@@ -185,7 +185,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -297,7 +297,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -612,12 +612,38 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# Aboutssss
 --------------------------------------------------------------*/
 .about {
   margin-right: 20px;
   margin-left: 20px;
 }
+.about .content h3 {
+  font-weight: 700;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+}
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+.about .content ul li {
+  padding: 0 0 8px 26px;
+  position: relative;
+}
+.about .content ul i {
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: #ffc451;
+}
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+
 
 /*--------------------------------------------------------------
 # Clients
@@ -709,61 +735,37 @@ section {
   background: #c6e1ff;
   color: #fff;
 }
-
 .features .multi {
-    column-count: 2;
+    column-count: 5;
 }
-
 /*--------------------------------------------------------------
-# Radiosort2
-----------------------------------------------------------------'*/
-.radiosort2 .icon-box .icon {
+# Radiosort
+--------------------------------------------------------------*/
+.radiosort .icon-box {
+  text-align: center;
+  border: 1px solid #c6e1ff;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background-color: #fff;
+  color: #000000;
   margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  border: 2px solid #c6e1ff;
+  width: 300px;
+  height: 200px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.radiosort2 .icon-box .icon i {
-  color: #000000;
-  font-size: 28px;
-  transition: ease-in-out 0.3s;
-}
-
-.radiosort2 .icon-box {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 24px;
-  border: 2px solid #c6e1ff;
-  border-radius: 4px;
-}
-
-.radiosort2 .icon-box a {
-  color: #000000;
+  font-size: 32px;
   transition: ease-in-out 0.3s;
 }
-
-.radiosort2 .icon-box a:hover {
+.radiosort .icon-box:hover {
+  background-color: #c6e1ff;
   color: #fff;
-  background: #c6e1ff;
-}
-
-.radiosort2 .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.radiosort2 .icon-box:hover {
-  border-color: #c6e1fff;
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.8);
   transform: translateY(-10px);
+}
 
 /*--------------------------------------------------------------
 # Cta

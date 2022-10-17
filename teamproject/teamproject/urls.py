@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('appfordog/qna/', include('qnaapp.urls')),
     path('appfordog/', include('mainapp.urls')),
-    path('accountapp/', include('accountapp.urls')),
+    path('appfordog/account/', include('accountapp.urls')),
 ]

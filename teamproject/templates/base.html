@@ -32,7 +32,6 @@
   </head>
 
   <body>
-
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center justify-content-lg-between">
@@ -49,8 +48,8 @@
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
-        <a href="#login" class="get-started-btn scrollto">Log In</a>
-        <a href="#signin" class="get-started-btn scrollto">Sign In</a>
+        <a href="/appfordog/account/login" class="get-started-btn scrollto">Log In</a>
+        <a href="/appfordog/account/register/" class="get-started-btn scrollto">Sign In</a>
       </div>
     </header>
     <!-- End Header -->
@@ -64,7 +63,9 @@
           <h2>일등하개 점수 좀 주개</h2>
           <p>Our Team</p>
         </div>
+
         <div class="row">
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
@@ -82,6 +83,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
@@ -99,6 +101,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
@@ -120,7 +123,7 @@
       </div>
   </section><!-- End Team Section -->
 
-        <!-- ======= Cta Section ======= -->
+    <!-- ======= Cta Section ======= -->
  <section id="cta" class="cta">
    <div class="container" data-aos="zoom-in">
 
@@ -131,17 +134,20 @@
        <br>
        <a class="cta-btn" href="/appfordog/qna/">모두 모두 말해주시개!</a>
      </div>
+
    </div>
  </section>
+    <!--End Cta Section-->
 
-      <!-- ======= Testimonials Section ======= -->
+    <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
     <div class="container" data-aos="zoom-in">
       <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper-wrapper">
+
           <div class="swiper-slide">
             <div class="testimonial-item">
-              <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+              <img src="{% static 'img/testimonials/testimonials-1.bmp' %}" class="testimonial-img" alt="">
               <h3>이진태</h3>
               <h4>팀 장</h4>
               <p>
@@ -150,7 +156,9 @@
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
+          <!-- End testimonial item -->
+
           <div class="swiper-slide">
             <div class="testimonial-item">
               <img src="{% static 'img/testimonials/testimonials-2.jpeg' %}" class="testimonial-img" alt="">
@@ -178,12 +186,14 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
+
     </div>
   </section><!-- End Testimonials Section -->
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about">
     <div class="container" data-aos="fade-up">
+
       <div class="row">
         <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
           <img src="{% static 'img/dalgom.jpeg'  %}" class="img-fluid" alt="">
@@ -214,9 +224,11 @@
           </p>
         </div>
       </div>
+
     </div>
   </section>
   <!-- End About Section -->
+
   <!-- ======= Clients Section ======= -->
   <section id="clients" class="clients">
     <div class="container" data-aos="zoom-in">
@@ -259,6 +271,7 @@
           <div class="footer-newsletter">
             <h3>Contact Us<span>&nbsp 연락주시개</span></h3>
             <div class="info">
+
               <div class="address">
                 <h4><i class="bi bi-geo-alt" style="color: #c6e1ff;"></i>&nbsp Location: 서울특별시 강남구 삼성로 534</h4>
               </div>
@@ -268,11 +281,14 @@
               <div class="phone">
                 <h4><i class="bi bi-phone" style="color: #c6e1ff;"></i>&nbsp Call: +82 10-1234-9876</h4>
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>일등하개 점수 좀 주시개</span></strong>. All Rights Reserved
@@ -286,6 +302,7 @@
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
     <!-- Vendor JS Files -->
     <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
     <script src="{% static 'vendor/aos/aos.js' %}"></script>
@@ -294,7 +311,8 @@
     <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
     <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
     <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
     <!-- Template Main JS File -->
-    <script src="{% static '/js/main.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

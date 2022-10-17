@@ -77,7 +77,7 @@ def sort_m1_3(request):
                 'result_m2':result_m2_1 ,
             }
         }
-        return render(request, 'dogapp/sort_m1_3.html', context)
+    return render(request, 'dogapp/sort_m1_3.html', context)
 
 
 def sort_m1_4(request):
