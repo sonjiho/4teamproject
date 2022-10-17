@@ -14,9 +14,38 @@
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
             </p>
-            <div>
-              <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-            </div>
+
+
+            <div id="map"></div>
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy81EbO46BRSnX1DOgg_F84bhsdbku2z4" ></script>
+              <script>
+            		var dom = document.getElementById("map");
+		            if(dom) {
+			            var latlng = { lat: 37.5096357, lng: 127.0555218}
+			            var map = new google.maps.Map(dom, {
+            	          center: latlng,
+                          zoom: 16
+          	            });
+                        var marker = new google.maps.Marker({position: latlng, map: map});
+
+                        var contentString = "<h3>프로젝트4팀의 작업이 진행중이에요ㅎㅎㅎ<img src='/static/images/clover.png' width='20'></h3>";
+
+                        var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+
+                        marker.addListener('click', function() {
+			                infowindow.open(map, marker);
+			            });
+                    }
+              </script>
+              <style type="text/css">
+                  #map {
+                      height: 600px;
+                      width: 100%;
+                  }
+              </style>
+
 
             <div class="row">
               <div class="col-md-6 d-md-flex align-items-md-stretch">
