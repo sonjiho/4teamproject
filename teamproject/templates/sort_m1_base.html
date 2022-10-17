@@ -23,17 +23,17 @@
   </div>
 </section><!-- End Features Section -->
 
-  <form method="GET" style="display: none;">
-      <input type="text" name="result_m1"/>
-  </form>
-  <script type = "text/javascript">
-      var callBack = function(event){
+<form method="GET" style="display: none;">
+    <input type="text" name="result_m1">
+</form>
+<script type = "text/javascript">
+    var callBack = function(event){
         var clickTarget = $(event.currentTargets);
         var text = clickTarget.text();
         $('[name=result_m1]').val(text);
         $('form').submit();
-      };
-      $('#multisort1 div').on('click', callBack);
-  </script>
+    };
+    $('#multisort1 div').on('click', callBack);
+</script>
 
 {% endblock %}

@@ -12,29 +12,38 @@
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box" onclick="location.href='/appfordog/sort_m2_1/'">서울특별시</div>
+          <div class="icon-box"><a href=# data-href="location.href='/appfordog/sort_m2_1/'">서울특별시</div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box" onclick="location.href='/appfordog/sort_m2_2/'">인천광역시</div>
+          <div class="icon-box"><a href=# data-href="location.href='/appfordog/sort_m2_2/'">인천광역시</div>
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box" onclick="location.href='/appfordog/sort_m2_3/'">경기도</div>
+          <div class="icon-box"><a href=# data-href="location.href='/appfordog/sort_m2_3/'">경기도</div>
         </div>
       </div>
     </div>
   </section><!-- End Services Section -->
 
-  <form method="GET" style="display: none;">
-      <input type="text" name="result_r2"/>
-  </form>
-  <script type = "text/javascript">
+  <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <form id="dataform" method="get" action="" style="display: none;">
+      <input type="text" name="result_r2" value="">
+    </form>
+    <script type="text/javascript">
       var callBack = function(event){
-        var clickTarget = $(event.currentTarget);
-        var text = clickTarget.text();
-        $('[name=result_r2]').val(text);
-        $('form').submit();
+          var clickTarget = $(event.currentTarget);
+          var aTag = clickTarget.find('a');
+          var text = aTag.text();
+          var url = aTag.attr('data-href');
+          var form = $('#dataform');
+          form.attr('action', url);
+
+          $('[name=result_r2]').val(text);
+          console.log(text)
+          console.log(url)
+          console.log(form)
+          $('form').submit();
       };
-      $('#radiosort div).on('click', callBack);
+     $('#radiosort div.icon-box').on('click', callBack);
   </script>
 
 {% endblock %}
