@@ -110,10 +110,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
 <<<<<<< HEAD
+<<<<<<< HEAD
     os.path.join(BASE_DIR, 'static'),
 =======
     BASE_DIR, 'static',
 >>>>>>> jiho
+=======
+    BASE_DIR, 'static',
+>>>>>>> juhee
 ]
 
 # Default primary key field type
