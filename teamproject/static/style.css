@@ -1714,3 +1714,30 @@ radiosort2s .icon-box p {
   height: 600px;
   width: 100%;
 }
+
+#button1 {
+  display: flex;
+  justify-content: space-;
+  align-items: center;
+  flex-wrap: wrap;
+  float: center;
+}
+
+#button a {
+  width: 120px;
+  height: 60px;
+  border: 1px solid #c6e1ff;
+  padding: 15px 10px 15px 10px;
+  color: #151515;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button a:hover {
+ background: #c6e1ff;
+ color: #fff;
+}
