@@ -8,64 +8,43 @@
     <div class="container" data-aos="fade-up">
       <div class="row no-gutters">
         <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
-        <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+        <div data-aos="fade-left" data-aos-delay="100">
           <div class="content d-flex flex-column justify-content-center">
             <h3>얼른 출발 하시개!</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-            </p>
-            <div id="map"></div>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy81EbO46BRSnX1DOgg_F84bhsdbku2z4" ></script>
-              <script>
-            		var dom = document.getElementById("map");
-		            if(dom) {
-			            var latlng = { lat: 37.5096357, lng: 127.0555218}
-			            var map = new google.maps.Map(dom, {
-            	          center: latlng,
-                          zoom: 16
-          	            });
-                        var marker = new google.maps.Marker({position: latlng, map: map});
-                        var contentString = "<h3>프로젝트4팀의 작업이 진행중이에요ㅎㅎㅎ<img src='/static/images/clover.png' width='20'></h3>";
-                        var infowindow = new google.maps.InfoWindow({
-                            content: contentString
-                        });
-                        marker.addListener('click', function() {
-			                infowindow.open(map, marker);
-			            });
-                    }
-              </script>
-
-            <div class="row">
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-emoji-smile"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="{{  googlemapsearch  }}" data-purecounter-duration="2" class="purecounter"></span>
-                  <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
-                </div>
-              </div>
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-journal-richtext"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="2" class="purecounter"></span>
-                  <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
-                </div>
-              </div>
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-clock"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
-                  <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-                </div>
-              </div>
-              <div class="col-md-6 d-md-flex align-items-md-stretch">
-                <div class="count-box">
-                  <i class="bi bi-award"></i>
-                  <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="4" class="purecounter"></span>
-                  <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
-                </div>
-              </div>
-            </div>
-          </div><!-- End .content-->
+             <div id="map">
+                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy81EbO46BRSnX1DOgg_F84bhsdbku2z4" ></script>
+                  <script>
+                        var dom = document.getElementById("map");
+                        if(dom) {
+                            var latlng = { lat: 37.5096357, lng: 127.0555218}
+                            var map = new google.maps.Map(dom, {
+                              center: latlng,
+                              zoom: 16
+                            });
+                            var marker = new google.maps.Marker({position: latlng, map: map});
+                            var contentString = "<h3>프로젝트4팀의 작업이 진행중이에요ㅎㅎㅎ<img src='/static/images/clover.png' width='20'></h3>";
+                            var infowindow = new google.maps.InfoWindow({
+                                content: contentString
+                            });
+                            marker.addListener('click', function() {
+                                infowindow.open(map, marker);
+                            });
+                        }
+                  </script>
+             </div>
+          </div>
+          <div class="column" style="column-width: 400px;">
+             <div id="image">
+                  <img src="{% static 'img/car_dog1.jpg' %}" style="height: 100%;" alt="">
+             </div>
+             <div id="count-box">
+                 <div style="padding: 15px 0 0 0; margin: 0 0 0 50px; font-family: 'Raleway', sans-serif; font-size: 36px; color: #3b3b3b; width: 760px;">
+                     총 검색 결과:
+                     <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="2" class="purecounter"   style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; ">
+                     </span>
+                 </div>
+             </div>
+          </div>
         </div>
       </div>
     </div>

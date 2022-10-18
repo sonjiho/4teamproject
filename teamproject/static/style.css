@@ -1068,28 +1068,15 @@ radiosort2s .icon-box p {
   margin-bottom: 0;
 }
 
-.counts .content .count-box {
-  padding: 20px 0;
-  width: 100%;
+.counts .column .count-box {
+
 }
 
-.counts .content .count-box i {
-  display: block;
-  font-size: 36px;
-  color: #c6e1ff;
-  float: left;
+.counts .column .count-box span {
+
 }
 
-.counts .content .count-box span {
-  font-size: 36px;
-  line-height: 30px;
-  display: block;
-  font-weight: 700;
-  color: #c6e1ff;
-  margin-left: 50px;
-}
-
-.counts .content .count-box p {
+.counts .column .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
   font-family: "Raleway", sans-serif;
@@ -1097,7 +1084,7 @@ radiosort2s .icon-box p {
   color: #3b3b3b;
 }
 
-.counts .content .count-box a {
+.counts .column .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
@@ -1107,14 +1094,22 @@ radiosort2s .icon-box p {
   transition: ease-in-out 0.3s;
 }
 
-.counts .content .count-box a:hover {
-  color: #626262;
+#image {
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.counts .image {
-  background: url("/static/img/car_dog1.jpg") center center no-repeat;
-  background-size: cover;
-  min-height: 400px;
+#map {
+  width: 100%;
+  height: 600px;
+  margin-bottom: 15px;
+}
+
+.counts .content .count-box a:hover {
+  color: #626262;
 }
 
 @media (max-width: 991px) {
@@ -1708,11 +1703,6 @@ radiosort2s .icon-box p {
   text-align: center;
   font-size: 13px;
   color: #fff;
-}
-
-#map {
-  height: 600px;
-  width: 100%;
 }
 
 #button1 {
