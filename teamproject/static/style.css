@@ -741,10 +741,7 @@ section {
 /*--------------------------------------------------------------
 # Radiosort2
 --------------------------------------------------------------*/
-.radiosort2 .container .column{
- column-count: 3;
-}
-.radiosort2 .container .column .icon-box {
+.radiosort2 .icon-box {
   text-align: center;
   border: 1px solid #c6e1ff;
   width: 300px;
@@ -757,7 +754,7 @@ section {
   font-size: 24px;
 }
 
-.radiosort2 .container .column .icon-box .icon {
+.radiosort2 .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -770,41 +767,40 @@ section {
   transition: 0.3s;
 }
 
-.radiosort2 .container .column .icon-box .icon i {
+.radiosort2 .icon-box .icon i {
   color: #151515;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
 
-.radiosort2 .container .column .icon-box a {
+.radiosort2 .column .icon-box a {
   color: #151515;
   transition: ease-in-out 0.3s;
 }
 
-.radiosort2 .container .column .icon-box a:hover {
+.radiosort2 .icon-box a:hover {
   color: #fff;
 }
 
-radiosort2s .container .column .icon-box p {
+radiosort2s .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.radiosort2 .container .column .icon-box:hover {
+.radiosort2 .icon-box:hover {
   border-color: #fff;
   color: #fff;
   background: #c6e1ff;
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
-}
 
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("static/img/dog3.jpg") fixed center center;
+  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("/static/img/dog3.jpg") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
