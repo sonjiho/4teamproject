@@ -8,7 +8,7 @@ def index(request) :
     print(request.user)
     if request.user.is_authenticated:
         context = {'logineduser': request.user}
-    return render(request, 'index.html', context)
+    return render(request, 'dogapp/login_index.html', context)
 
 def register(request):
     res_data = None
@@ -30,7 +30,7 @@ def register(request):
                             password = password)
             auth.login(request, user)
             return redirect("account:index")
-    return render(request, 'register.html', res_data)
+    return render(request, 'dogapp/login_register.html', res_data)
 
 
 def login(request):
@@ -43,9 +43,9 @@ def login(request):
             auth.login(request, user)
             return redirect("account:index")
         else :
-            return render(request, 'login.html', {'error': '사용자 아이디 또는 패스워드가 틀립니다.'})
+            return render(request, 'dogapp/login_login.html', {'error': '사용자 아이디 또는 패스워드가 틀립니다.'})
     else :
-        return render(request, 'login.html')
+        return render(request, 'dogapp/login_login.html')
 
 def logout(request):
     if request.user.is_authenticated:
@@ -56,7 +56,7 @@ def only_member(request) :
     context = None
     if request.user.is_authenticated:
         context = {'logineduser': request.user.last_name+request.user.first_name}
-    return render(request, 'member.html', context)
+    return render(request, 'dogapp/login_member.html', context)
 
 
 # Create your views here.

@@ -3,9 +3,8 @@ from .views import *
 
 app_name='mainapp'
 
-urlpatterns = (
+urlpatterns = [
     path('', mainpage, name='mainpage'),
-<<<<<<< HEAD
     path('sort_m1_1/', sort_m1_1, name='sort_m1_1'),
     path('sort_m1_2/', sort_m1_2, name='sort_m1_2'),
     path('sort_m1_3/', sort_m1_3, name='sort_m1_3'),
@@ -17,6 +16,3 @@ urlpatterns = (
     path('sort_m2_3/', sort_m2_3, name='sort_m2_3'),
     path('sort_end/', sort_end, name='sort_end'),
 ]
-=======
-)
->>>>>>> jiho

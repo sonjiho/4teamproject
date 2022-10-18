@@ -3,40 +3,40 @@
 {% load static %}
 
 {% block content2 %}
-<!-- ======= Features Section ======= -->
-<section id="features" class="features" style="padding-top: 50px;">
-  <div class="container" data-aos="fade-up">
-    <div class="row">
-      <div class="image col-lg-6" style="background-image: url(/static/img/dog4.jpg);" data-aos="fade-right"></div>
-      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-          {% block content4 %}
-          {% endblock %}
-        <br><br>
-        <div id="multisort1">
-            <div style="text-align: center;">
-                 <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
-                 <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features" style="padding-top: 50px;">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="image col-lg-6" style="background-image: url(/static/img/dog4.jpg);" data-aos="fade-right"></div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              {% block content4 %}
+              {% endblock %}
+            <br><br>
+            <div id="multisort1">
+                <div style="text-align: center;">
+                     <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
+                     <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+                </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section><!-- End Features Section -->
+    </section><!-- End Features Section -->
 
-<script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
     <form id="dataform" method="get" action="" style="display: none;">
-    <input type="submit" style="display: none;">
+        <input type="submit" style="display: none;">
     </form>
     <script type="text/javascript">
-    var callBack = function(event);
-        var submitTag = .find('input');
-        var url = submitTag.attr('data-href');
-        var form = $('#dataform');
-        form.attr('action', url);
+        var callBack = function(event);
+            var submitTag = .find('input');
+            var url = submitTag.attr('data-href');
+            var form = $('#dataform');
+            form.attr('action', url);
 
-        $('[name=result_r1]').val(text);
-        $('form').submit();
-    };
-    $('#radiosort1 div.icon-box').on('click', callBack);
-</script>
-{% endblock %}
+            $('[name=result_r1]').val(text);
+            $('form').submit();
+        };
+        $('#radiosort1 div.icon-box').on('click', callBack);
+    </script>
+    {% endblock %}
