@@ -61,11 +61,11 @@ def answer_create(request, question_id):
 def index(request):
     """"목록출력"""
     page = request.GET.get('page', '1')
-    qna_list = Question.objects.order_by('-create_date')
-    paginator = Paginator(qna_list, 5)
+    question_list = Question.objects.order_by('-create_date')
+    paginator = Paginator(question_list, 5)
     page_obj = paginator.get_page(page)
-
-    context = {'qna_list': page_obj}
+    print(page_obj)
+    context = {'question_list': page_obj}
     return render(request, 'dogapp/qna_list.html', context)
 
 
