@@ -22,15 +22,15 @@
               {% endif %}
               <div class="form-group">
                   <label for="subject">제 목</label>
-                  <input type="text" class="form-control" name="subject" id="subject" value="{{ form.subject.value|default_if_none:'' }}">
+                  <input type="text" class="form-control" name="subject" id="subject" value="{{ form.subject.value|default_if_none:'' }}" style="width: 100%">
               </div>
               <div class="form-group">
                   <label for="content"> 내 용</label>
-                  <textarea class="form-control" name="content" id="content" rows="10">
+                  <textarea class="form-control" name="content" id="content" rows="10" style="width: 100%">
                       {{  form.subject.value|default_if_none:''  }}
                   </textarea>
               </div>
-              <button type="submit" class="btn btn-primary">저장하개</button>
+              <button type="submit" class="btn btn-primary" style="float: right; border: 0; background: #c6e1ff; color:#000000;">저장하개</button>
           </form>
       </div>
     </section>

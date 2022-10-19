@@ -28,6 +28,8 @@
                 <div class="col-12">
                     <form method="POST" action="{% url 'account:login'%}">
                       {% csrf_token %}
+                        <input type="hidden" name="next" value="{{  next  }}">
+                        {% include "form_errors.html" %}
                       <div class="form-group">
                           <label for="username">ID</label>
                           <input type="text" class="form-control"  name="useremail" placeholder="사용자 아이디" >
