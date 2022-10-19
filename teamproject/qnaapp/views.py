@@ -49,13 +49,13 @@ def answer_create(request, question_id):
             answer.question = question
             answer.save()
             return redirect("qnaapp:detail", question_id=question.id)
-        else:
-            form = AnswerForm()
-        context={
-            'question':question,
-            'form': form
-                 }
-        return render(request, 'dogapp/qna_detail.html', context)
+    else:
+        form = AnswerForm()
+    context={
+        'question':question,
+        'form': form
+             }
+    return render(request, 'dogapp/qna_detail.html', context)
 
 
 def index(request):
@@ -85,12 +85,12 @@ def question_modify(request, question_id):
             question.modify_date = timezone.now()
             question.save()
             return redirect('qnaapp:detail', question_id=question.id)
-        else:
-            form = QuestionForm(instance=question)
-        context = {
-            'form': form
-        }
-        return render(request, ' dogapp/question_form.html', context)
+    else:
+        form = QuestionForm(instance=question)
+    context = {
+        'form': form
+    }
+    return render(request, 'dogapp/qna_form.html', context)
 
 
 @login_required(login_url='common:login')
@@ -120,13 +120,13 @@ def answer_modify(request, answer_id):
             answer.modify_date = timezone.now()
             answer.save()
             return redirect('qnaapp:detail', question_id=answer.question.id)
-        else:
-            form = AnswerForm(instance=answer)
-        context = {
-            'answer': answer,
-            'form': form
-        }
-        return render(request, ' dogapp/question_form.html', context)
+    else:
+        form = AnswerForm(instance=answer)
+    context = {
+        'answer': answer,
+        'form': form
+    }
+    return render(request, 'dogapp/qna_form.html', context)
 
 @login_required(login_url='common:login')
 def answer_delete(request, answer_id):
@@ -140,22 +140,23 @@ def answer_delete(request, answer_id):
 
 
 @login_required(login_url='common:login')
-def comment_create_question(request, question_id):
+def comment_create_question(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
     if request.method =="POST":
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
             comment.author = request.user
             comment.create_date = timezone.now()
-            comment.question = question
+            comment.question = comment
             comment.save()
-            return redirect('qnaapp:detail', question_id=question.id)
-        else:
-            form = CommentForm()
-        context = {
-            'form': form
-        }
-        return render(request, 'dogapp/qna_comment_form.html', context)
+            return redirect('qnaapp:detail', question_id=comment.id)
+    else:
+        form = CommentForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'dogapp/qna_comment_form.html', context)
 
 @login_required(login_url='common:login')
 def comment_modify_question(request, comment_id):
@@ -173,12 +174,12 @@ def comment_modify_question(request, comment_id):
             comment.modify_date = timezone.now()
             comment.save()
             return redirect('qnaapp:detail', question_id=comment.question.id)
-        else:
-            form = CommentForm(instance=comment)
-        context = {
-            'form': form
-        }
-        return render(request, ' dogapp/qna_comment_form.html', context)
+    else:
+        form = CommentForm(instance=comment)
+    context = {
+        'form': form
+    }
+    return render(request, 'dogapp/qna_comment_form.html', context)
 
 @login_required(login_url='common:login')
 def comment_delete_question(request, comment_id):
@@ -204,12 +205,12 @@ def comment_create_answer(request, question_id):
             comment.answer = answer
             comment.save()
             return redirect('qnaapp:detail', question_id=answer.question.id)
-        else:
-            form = CommentForm()
-        context = {
-            'form': form
-        }
-        return render(request, 'dogapp/qna_comment_form.html', context)
+    else:
+        form = CommentForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'dogapp/qna_comment_form.html', context)
 
 @login_required(login_url='common:login')
 def comment_modify_answer(request, comment_id):
@@ -227,12 +228,12 @@ def comment_modify_answer(request, comment_id):
             comment.modify_date = timezone.now()
             comment.save()
             return redirect('qnaapp:detail', question_id=comment.answer.question.id)
-        else:
-            form = CommentForm(instance=comment)
-        context = {
-            'form': form
-        }
-        return render(request, ' dogapp/qna_comment_form.html', context)
+    else:
+        form = CommentForm(instance=comment)
+    context = {
+        'form': form
+    }
+    return render(request, ' dogapp/qna_comment_form.html', context)
 
 @login_required(login_url='common:login')
 def comment_delete_answer(request, comment_id):
