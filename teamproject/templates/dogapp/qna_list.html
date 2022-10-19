@@ -4,6 +4,7 @@
 {% load qna_filter %}
 
 {% block content3 %}
+
     <section class="inner-page">
       <div class="container">
           <table class="table">
@@ -21,7 +22,7 @@
               <tr class="text-center">
                   <td>{{  question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1  }}</td>
                   <td class="text-left">
-                      <a style="color: #000000;" href="{% url 'qnaapp:detail' question.id %}">
+                      <a style="color: #000000;" href="{% url 'qna:detail' question.id %}">
                       {{  question.subject  }}
                       </a>
                       {% if question.answer_set.count > 0 %}
@@ -30,19 +31,15 @@
                       </span>
                       {% endif %}
                   </td>
-                  <td>
-                      {{  question.author.username }}</td>
-                  </td>
-                  <td>
-                      {{  question.create_date  }}
-                  </td>
+                  <td>{{  question.author.username }}</td>
+                  <td>{{  question.create_date  }}</td>
               </tr>
-              {% endfor %}
-              {% else %}
+            {% endfor %}
+            {% else %}
                <tr>
                  <td colspan="3">질문 없으시개?!</td>
               </tr>
-              {% endif %}
+            {% endif %}
               </tbody>
           </table>
           <ul class="pagination justify-content-center">
@@ -59,9 +56,9 @@
                   </a>
               </li>
               {% endif %}
-              {% for page_number in question_list.paginator.page_range %}
-              {% if page_number >= question_list.number| add:-5 and page_number <= question_list.number|add:5 %}
-                {% if page_number == question_list.number %}
+              {% for page_number in qna_list.paginator.page_range %}
+              {% if page_number >= qna_list.number|add:-5 and page_number <= qna_list.number|add:5 %}
+                {% if page_number == qna_list.number %}
                   <li class="page-item active" aria-current="page">
                       <a class="page-link" href="?page={{  page_number  }}">
                           {{  page_number }}
@@ -88,7 +85,7 @@
                       다음으로 가개
                   </a>
               </li>
-              {$ endif %}
+              {% endif %}
           </ul>
         <a href="{% url 'qnaapp:question_create' %}" class="btn btn-primary">
               질문하시개

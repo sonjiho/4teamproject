@@ -303,20 +303,6 @@
     <form id="dataform" method="get" action="" style="display: none;">
       <input type="text" name="result_r1" value="">
     </form>
-    <script type="text/javascript">
-        var callBack = function(event){
-            var clickTarget = $(event.currentTarget);
-            var aTag = clickTarget.find('a');
-            var text = aTag.text();
-            var url = aTag.attr('data-href');
-            var form = $('#dataform');
-            form.attr('action', url);
-
-            $('[name=result_r1]').val(text);
-            $('form').submit();
-        };
-       $('#radiosort1 div.icon-box').on('click', callBack);
-   </script>
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -332,8 +318,8 @@
 
     <!-- Template Main JS File -->
     <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/jquery-3.6.1.min.js %}"></script>
-    <script src="{% static 'js/bootstrap.min.js %}"></script>
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block script %}
     {% endblock %}
   </body>

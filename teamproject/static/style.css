@@ -1731,3 +1731,7 @@ radiosort2s .icon-box p {
  background: #c6e1ff;
  color: #fff;
 }
+.comment {
+  border-top:dotted 1px #c6e1ff;
+  font-size: 0.7em;
+}
