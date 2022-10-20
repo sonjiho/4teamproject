@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Question, Answer, Comment
+from .models import Question, Answer
 from django.utils import timezone
-from .forms import QuestionForm, AnswerForm, CommentForm
+from .forms import QuestionForm, AnswerForm
 from django. contrib.auth.decorators import login_required
 from django. contrib import messages
 from django.db import models
