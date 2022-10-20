@@ -1705,14 +1705,6 @@ radiosort2s .icon-box p {
   color: #fff;
 }
 
-#button_log {
-  display: flex;
-  justify-content: space-;
-  align-items: center;
-  flex-wrap: wrap;
-  float: center;
-}
-
 #button a {
   width: 120px;
   height: 60px;
