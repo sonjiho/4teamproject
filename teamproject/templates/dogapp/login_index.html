@@ -3,11 +3,17 @@
 {% load static %}
 
 {% block content7 %}
-    {% if not logineduser %}
-        <a class="dropdown-item" href="{% url 'account:register' %}">회원가입</a>
-        <a class="dropdown-item" href="{% url 'account:login' %}">로그인</a>
-    {% else %}
-        <a class="dropdown-item" href="{% url 'account:logout' %}">로그아웃</a>
-    {% endif %}
-         <a class="dropdown-item" href="{% url 'account:onlymember' %}">회원페이지</a>
+<section class="inner-page">
+  <div class="container">
+    <div class="row mt-5">
+         <div class="col-12 text-center">
+             {% if not logineduser %}
+                <h3>로그아웃 되었개! 멍멍!</h3>
+             {% else %}
+                <h3>로그인 되었개! 멍멍!</h3>
+            {% endif %}
+         </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
