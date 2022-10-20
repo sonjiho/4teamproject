@@ -28,7 +28,7 @@
                   {% if request.user == question.author %}
                       <div class="my-3">
                           <a href="{% url 'qnaapp:question_modify' question.id %}" class="btn btn-sm btn-outline-secondary">수정하시개</a>
-                          <a href=# class="delete btn btn-sm btn-outline-secondary" data-uri="{% url 'qnaapp:question_delete' question.id %}">삭제하시개</a>
+                          <a href="#" class="delete btn btn-sm btn-outline-secondary" data-uri="{% url 'qnaapp:question_delete' question.id %}">삭제하시개</a>
                       </div>
                   {% endif %}
               </div>
@@ -75,12 +75,12 @@
 {% endblock %}
 {% block script %}
 <script type="text/javascript">
-    $(document).ready(function(){
+$(document).ready(function(){
         $(".delete").on('click',function() {
-            if(confirm("정말 삭제할거개?")) {
-                location.href = $(this)data.("uri");
+            if(confirm("정말 삭제하실거개?")) {
+                location.href = $(this).data('uri');
                 }
         });
-    });
+});
 </script>
 {% endblock %}
