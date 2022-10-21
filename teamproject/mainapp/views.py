@@ -131,7 +131,8 @@ def sort_m2_3(request):
 
 def sort_end(request):
     context=""
-    if request.method == 'GET':
+    result_m2 = []
+    if request.method == 'GET' and len(result_m2) > 0:
         result_r1 = request.GET.get('result_r1',"")
         result_m1 = request.GET.get("result_m1","")
         result_r2 = request.GET.get('result_r2',"")
@@ -141,7 +142,13 @@ def sort_end(request):
                 'result_r1': result_r1 ,
                 'result_m1': result_m1,
                 'result_r2': result_r2,
-                'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개"),
+                'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개")
             }
         }
+    else :
+        result_r1 = request.GET.get('result_r1')
+        context = {
+            'results': {
+                'result_r1': result_r1 }
+            }
     return render(request, 'dogapp/sort_end.html', context)
