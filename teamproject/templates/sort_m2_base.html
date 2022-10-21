@@ -10,16 +10,23 @@
            <h2>시/군/구</h2>
            <p>가고 싶은 곳 다 고르개!</p>
          </div>
+          <form id="dataform" method="get" action="/appfordog/sort_end/#counts">
           {% block content5 %}
           {% endblock %}
-          <div class="" style="text-align: center;">
+          </form>
+          <br><br>
+          <div class="multisort2" style="text-align: center;">
                <a class="portfolio-btn" href="/appfordog/sort_r2/">이전으로 가시개</a>
-               <a class="portfolio-btn" href="/appfordog/sort_end/"> 다음으로 가시개</a>
+               <a class="portfolio-btn nextt" href="#"> 다음으로 가시개</a>
           </div>
       </div>
     </section><!-- End Portfolio Section -->
 
-      <form target="#portfolio" onsubmit="onclick" method="GET" style="display: none;">
-          <input type="text" name="result_m2"/>
-      </form>
+    <script type="text/javascript">
+      var callBack = function(event){
+        var form = $('#dataform')
+        form.submit();
+      };
+      $('#multsort2 a.nextt').on('click', callBack);
+    </script>
 {% endblock %}

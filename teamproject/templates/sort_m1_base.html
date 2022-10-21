@@ -9,13 +9,15 @@
         <div class="row">
           <div class="image col-lg-6" style="background-image: url(/static/img/dog4.jpg);" data-aos="fade-right"></div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+              <form id="dataform" method="get" action="/appfordog/sort_r2/">
               {% block content4 %}
               {% endblock %}
+              </form>
             <br><br>
             <div id="multisort1">
                 <div style="text-align: center;">
                      <a class="features-btn" href="/appfordog/sort_r1/">이전으로 가시개</a>
-                     <a class="features-btn" href="/appfordog/sort_r2/"> 다음으로 가시개</a>
+                     <a class="features-btn next" href="#"> 다음으로 가시개</a>
                 </div>
             </div>
           </div>
@@ -23,20 +25,11 @@
       </div>
     </section><!-- End Features Section -->
 
-    <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
-    <form id="dataform" method="get" action="" style="display: none;">
-        <input type="submit" style="display: none;">
-    </form>
     <script type="text/javascript">
-        var callBack = function(event);
-            var submitTag = .find('input');
-            var url = submitTag.attr('data-href');
-            var form = $('#dataform');
-            form.attr('action', url);
-
-            $('[name=result_r1]').val(text);
-            $('form').submit();
-        };
-        $('#radiosort1 div.icon-box').on('click', callBack);
-    </script>
-    {% endblock %}
+      var callBack = function(event){
+        var form = $('#dataform')
+        form.submit();
+      };
+      $('#multisort1 a.next').on('click', callBack);
+      </script>
+{% endblock %}

@@ -46,22 +46,18 @@
     </div>
   </section>
 
-  <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
-  <form id="dataform" method="get" action="" style="display: none;">
-    <input type="text" name="result_r1" value="">
-  </form>
   <script type="text/javascript">
-    var callBack = function(event){
+      var callBack = function(event){
         var clickTarget = $(event.currentTarget);
-        var aTag = clickTarget.find('a');
+        var aTag = clickTarget.find('a')
         var text = aTag.text();
         var url = aTag.attr('data-href');
-        var form = $('#dataform');
+        var form = $('#dataform')
         form.attr('action', url);
 
         $('[name=result_r1]').val(text);
-        $('form').submit();
-    };
-   $('#radiosort1 div.icon-box').on('click', callBack);
+        form.submit();
+      };
+      $('#radiosort1 div.icon-box').on('click', callBack);
   </script>
 {% endblock %}
