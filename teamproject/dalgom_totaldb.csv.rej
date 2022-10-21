@@ -1,0 +1,7 @@
+diff a/teamproject/dalgom_totaldb.csv b/teamproject/dalgom_totaldb.csv	(rejected hunks)
+@@ -1,4 +0,4 @@
+-major_class,sub_class,name,address,city,state,road_name,latlng,etc
++SORT1,SORT2,이름,주소,광역(특별)시/도,시/군/구,도로명,위도 경도,비고
+ 반려 동반 가능 숙소,글램핑,오하브 글램핑,경기도 가평군 북면 꽃넘이길 43,경기도,가평군,북면 꽃넘이길 43,POINT (127.527012 37.896166),
+ 반려 동반 가능 숙소,글램핑,힐포인트,경기도 용인시 수지구 동천로 541,경기도,용인시,수지구 동천로 541,POINT (127.0527565 37.3513547),
+ 반려 동반 가능 숙소,애견 펜션,가평 2PM애견펜션,경기도 가평군 상면 청군로 690-13,경기도,가평군,상면 청군로 690-13,POINT (127.3521492 37.7958862),
