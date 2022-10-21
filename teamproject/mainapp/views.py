@@ -10,23 +10,11 @@ def mainpage(request):
 
 def sort_m1_1(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_1.html', context)
@@ -34,23 +22,11 @@ def sort_m1_1(request):
 
 def sort_m1_2(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_2.html', context)
@@ -58,23 +34,11 @@ def sort_m1_2(request):
 
 def sort_m1_3(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_3.html', context)
@@ -82,46 +46,22 @@ def sort_m1_3(request):
 
 def sort_m1_4(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_4.html', context)
 
 def sort_m1_5(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m1_5.html', context)
@@ -129,23 +69,13 @@ def sort_m1_5(request):
 
 def sort_r2(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
-        result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
+        result_m1 = request.GET.getlist("result_m1","")
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
-                'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
+                'result_m1': (result_m1 [0] + " 외 " + str(len(result_m1)-1) + "개 선택"),
             }
         }
     return render(request, 'dogapp/sort_r2.html', context)
@@ -153,23 +83,15 @@ def sort_r2(request):
 
 def sort_m2_1(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
+        result_m1 = request.GET.getlist("result_m1","")
         result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
+                'result_m1': (result_m1 [0] + " 외 " + str(len(result_m1)-1) + "개 선택"),
                 'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_1.html', context)
@@ -177,23 +99,15 @@ def sort_m2_1(request):
 
 def sort_m2_2(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
+        result_m1 = request.GET.getlist("result_m1","")
         result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
+                'result_m1': (result_m1 [0] + " 외 " + str(len(result_m1)-1) + "개 선택"),
                 'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_2.html', context)
@@ -201,23 +115,15 @@ def sort_m2_2(request):
 
 def sort_m2_3(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
+        result_m1 = request.GET.getlist("result_m1","")
         result_r2=request.GET.get('result_r2',"")
-        result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
+                'result_m1': (result_m1 [0] + " 외 " + str(len(result_m1)-1) + "개 선택"),
                 'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
             }
         }
     return render(request, 'dogapp/sort_m2_3.html', context)
@@ -225,23 +131,17 @@ def sort_m2_3(request):
 
 def sort_end(request):
     context=""
-    result_m1_1= ""
-    result_m2_1=""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1 ","")
-        for r in result_m1:
-            result_m1_1 += r + " "
+        result_m1 = request.GET.getlist("result_m1","")
         result_r2=request.GET.get('result_r2',"")
         result_m2= request.GET.getlist("result_m2","")
-        for f in result_m2:
-            result_m2_1 += f+ " "
         context = {
             'results': {
                 'result_r1': result_r1 ,
-                'result_m1': result_m1_1 ,
+                'result_m1': (result_m1 [0] + " 외 " + str(len(result_m1)-1) + "개 선택"),
                 'result_r2': result_r2,
-                'result_m2':result_m2_1 ,
+                'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개 선택"),
             }
         }
     return render(request, 'dogapp/sort_end.html', context)

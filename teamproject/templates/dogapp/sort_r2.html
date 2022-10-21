@@ -13,24 +13,20 @@
       <div class="column" style="column-count: 3;">
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <a href='#' data-href="/appfordog/sort_m2_1/#portfolio">서울특별시</a></div>
+            <a href='#' data-href="/appfordog/sort_m2_1/#portfolio-info">서울특별시</a></div>
         </div>
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
-            <a href='#' data-href="/appfordog/sort_m2_2/#portfolio">인천광역시</a></div>
+            <a href='#' data-href="/appfordog/sort_m2_2/#portfolio-info">인천광역시</a></div>
         </div>
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon-box">
-            <a href='#' data-href="/appfordog/sort_m2_3/#portfolio">경기도</a></div>
+            <a href='#' data-href="/appfordog/sort_m2_3/#portfolio-info">경기도</a></div>
         </div>
       </div>
       </div>
   </section><!-- End Services Section -->
 
-  <script type="text/javascript" src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
-  <form id="dataform" method="get" action="" style="display: none;">
-    <input type="text" name="result_r2" value="">
-  </form>
   <script type="text/javascript">
       var callBack = function(event){
         var clickTarget = $(event.currentTarget);
@@ -41,8 +37,7 @@
         form.attr('action', url);
 
         $('[name=result_r2]').val(text);
-        $('form').submit();
+        form.submit();
       };
       $('#radiosort2 div.icon-box').on('click', callBack);
-  </script>
 {% endblock %}

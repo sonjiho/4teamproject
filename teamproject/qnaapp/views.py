@@ -126,7 +126,7 @@ def answer_modify(request, answer_id):
         'answer': answer,
         'form': form
     }
-    return render(request, 'dogapp/qna_form.html', context)
+    return render(request, 'dogapp/qna_answer_form.html', context)
 
 @login_required(login_url='common:login')
 def answer_delete(request, answer_id):

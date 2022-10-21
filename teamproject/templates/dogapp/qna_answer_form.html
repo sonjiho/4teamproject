@@ -10,7 +10,7 @@
                 {% include "form_errors.html" %}
                 <div class="form-group">
                     <label for="content">답변이개</label>
-                    <textarea class="form-control" name="content" id="content" rows="10">{{  form.content.value|default_if_none:''  }}</textarea>
+                    <textarea class="form-control" name="content" id="content" rows="10" style="width: 100%;">{{  form.content.value|default_if_none:''  }}</textarea>
                 </div><br>
                 <button type="submit" class="btn btn-primary" style="float: right; border: 0; background: #c6e1ff; color:#000000;">저장하시개</button>
             </form>
