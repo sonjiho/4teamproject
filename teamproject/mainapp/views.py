@@ -3,7 +3,7 @@ import csv
 from django.http import HttpResponse, JsonResponse
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
-
+from mainapp.models import DMap
 def mainpage(request):
     return render(request, 'dogapp/sort_r1.html')
 
@@ -137,18 +137,28 @@ def sort_end(request):
         result_m1 = request.GET.get("result_m1","")
         result_r2 = request.GET.get('result_r2',"")
         result_m2 = request.GET.getlist("result_m2","")
+
+        DMap_1 = DMap.objects.filter(sub_class = '중식')
+        DMap_1_length = len(DMap_1)
         context = {
             'results': {
                 'result_r1': result_r1 ,
                 'result_m1': result_m1,
                 'result_r2': result_r2,
                 'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개")
-            }
+            },
+            'DMap_1': DMap_1,
+            'DMap_1_length': DMap_1_length
         }
     else :
         result_r1 = request.GET.get('result_r1')
+        DMap_1 = DMap.objects.filter(sub_class='중식')
+        DMap_1_length = len(DMap_1)
+
         context = {
             'results': {
-                'result_r1': result_r1 }
+                'result_r1': result_r1 },
+            'DMap_1': DMap_1,
+            'DMap_1_length': DMap_1_length
             }
     return render(request, 'dogapp/sort_end.html', context)

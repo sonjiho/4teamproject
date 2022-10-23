@@ -68,9 +68,12 @@
                  </div>
                  <div id="count-box">
                      <div style="padding: 15px 0 0 0; margin: 0 0 0 50px; font-family: 'Raleway', sans-serif; font-size: 36px; color: #3b3b3b; width: 760px;">
-                         총 검색 결과:
-                         <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="2" class="purecounter"   style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; ">
-                         </span>
+                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{ DMap_1_length }}" data-purecounter-duration="2" class="purecounter"   style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
+                         <ol>
+                         {% for data in DMap_1 %}
+                            <li><h4 style="font-size:20px; font-weight:800">{{ data.name }}</h4> <h6 style="font-size:13px">{{ data.address }}</h6></li>
+                         {% endfor %}
+                         </ol>
                      </div>
                  </div>
               </div>
