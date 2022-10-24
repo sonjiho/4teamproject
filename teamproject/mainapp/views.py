@@ -1,9 +1,6 @@
-import os
-import csv
-from django.http import HttpResponse, JsonResponse
-from django.views.generic.base import TemplateView
+from django.core.paginator import Paginator
 from django.shortcuts import render
-from .models import Dogplace, City
+from .models import Dogplace
 
 
 def mainpage(request):
@@ -39,7 +36,7 @@ def sort_m1_2(request):
 
 
 def sort_m1_3(request):
-    context=""
+    context = ""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1', "")
         category_id = request.GET.get('category_id', "")
@@ -47,13 +44,13 @@ def sort_m1_3(request):
             'results': {
                 'result_r1': (result_r1 + " > ")
             },
-            'category_id':category_id
+            'category_id': category_id
         }
     return render(request, 'dogapp/sort_m1_3.html', context)
 
 
 def sort_m1_4(request):
-    context=""
+    context = ""
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1',"")
         category_id = request.GET.get('category_id', "")
@@ -65,10 +62,11 @@ def sort_m1_4(request):
         }
     return render(request, 'dogapp/sort_m1_4.html', context)
 
+
 def sort_m1_5(request):
-    context=""
+    context = ""
     if request.method == 'GET':
-        result_r1 = request.GET.get('result_r1',"")
+        result_r1 = request.GET.get('result_r1', "")
         category_id = request.GET.get('category_id', "")
         context = {
             'results': {
@@ -82,8 +80,8 @@ def sort_m1_5(request):
 def sort_r2(request):
     context=""
     if request.method == 'GET':
-        result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.getlist("result_m1","")
+        result_r1 = request.GET.get('result_r1', "")
+        result_m1 = request.GET.getlist("result_m1", "")
         category_id = request.GET.get('category_id', "")
         type_id = request.GET.getlist('type_id', "")
         context = {
@@ -98,21 +96,21 @@ def sort_r2(request):
 
 
 def sort_m2_1(request):
-    context=""
+    context = ""
     if request.method == 'GET':
-        result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.get("result_m1","")
-        result_r2 = request.GET.get('result_r2',"")
+        result_r1 = request.GET.get('result_r1', "")
+        result_m1 = request.GET.get("result_m1", "")
+        result_r2 = request.GET.get('result_r2', "")
         category_id = request.GET.get('category_id', "")
         type_id = request.GET.getlist('type_id', "")
         state_id = request.GET.get('state_id', "")
         context = {
             'results': {
-                'result_r1': result_r1 ,
-                'result_m1': result_m1 ,
-                'result_r2': (result_r2+ " > ")
+                'result_r1': result_r1,
+                'result_m1': result_m1,
+                'result_r2': (result_r2 + " > ")
             },
-            'category_id':category_id,
+            'category_id': category_id,
             'type_id': type_id,
             'state_id': state_id
         }
@@ -120,21 +118,21 @@ def sort_m2_1(request):
 
 
 def sort_m2_2(request):
-    context=""
+    context = ""
     if request.method == 'GET':
-        result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.get("result_m1","")
-        result_r2 = request.GET.get('result_r2',"")
+        result_r1 = request.GET.get('result_r1', "")
+        result_m1 = request.GET.get("result_m1", "")
+        result_r2 = request.GET.get('result_r2', "")
         category_id = request.GET.get('category_id', "")
         type_id = request.GET.getlist('type_id', "")
         state_id = request.GET.get('state_id', "")
         context = {
             'results': {
-                'result_r1': result_r1 ,
+                'result_r1': result_r1,
                 'result_m1': result_m1,
-                'result_r2': (result_r2+ " > ")
+                'result_r2': (result_r2 + " > ")
             },
-            'category_id':category_id,
+            'category_id': category_id,
             'type_id': type_id,
             'state_id': state_id
         }
@@ -142,21 +140,21 @@ def sort_m2_2(request):
 
 
 def sort_m2_3(request):
-    context=""
+    context = ""
     if request.method == 'GET':
-        result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.get("result_m1","")
-        result_r2 = request.GET.get('result_r2',"")
+        result_r1 = request.GET.get('result_r1', "")
+        result_m1 = request.GET.get("result_m1", "")
+        result_r2 = request.GET.get('result_r2', "")
         category_id = request.GET.get('category_id', "")
         type_id = request.GET.getlist('type_id', "")
         state_id = request.GET.get('state_id', "")
         context = {
             'results': {
-                'result_r1': result_r1 ,
+                'result_r1': result_r1,
                 'result_m1': result_m1,
-                'result_r2': (result_r2+ " > ")
+                'result_r2': (result_r2 + " > ")
             },
-            'category_id':category_id,
+            'category_id': category_id,
             'type_id': type_id,
             'state_id': state_id
         }
@@ -164,29 +162,34 @@ def sort_m2_3(request):
 
 
 def sort_end(request):
-    city_ids = []
+
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1', "")
         category_id = request.GET.get('category_id', "")
         if category_id == "6":
+            total_result = Dogplace.objects.filter(type__id__in="29")
+            len_result = len(total_result)
+
             context = {
                 'results': {
                     'result_r1': result_r1
                 },
-                'category_id': category_id
+                'category_id': category_id,
+                'total_result': total_result,
+                'len_result': len_result
             }
+
             return render(request, 'dogapp/sort_end.html', context)
 
         else:
-            result_m1 = request.GET.get("result_m1","")
-            result_r2 = request.GET.get('result_r2',"")
-            result_m2 = request.GET.getlist("result_m2","")
+            result_m1 = request.GET.get("result_m1", "")
+            result_r2 = request.GET.get('result_r2', "")
+            result_m2 = request.GET.getlist("result_m2", "")
             category_id = request.GET.get('category_id', "")
             type_id = request.GET.getlist('type_id', "")
             state_id = request.GET.get('state_id', "")
             city_id = request.GET.getlist('city_id', "")
             total_result = Dogplace.objects.filter(city_id__in=city_id) & Dogplace.objects.filter(type_id__in=type_id)
-            print(total_result)
             len_result = len(total_result)
             context = {
                 'results': {
@@ -199,8 +202,8 @@ def sort_end(request):
                 'type_id': type_id,
                 'state_id': state_id,
                 'city_id': city_id,
-                'total_result': str(total_result),
-                'len_result': len_result,
+                'total_result': total_result,
+                'len_result': len_result
             }
-
-        return render(request, 'dogapp/sort_end.html', context)
+            print(context)
+            return render(request, 'dogapp/sort_end.html', context)
