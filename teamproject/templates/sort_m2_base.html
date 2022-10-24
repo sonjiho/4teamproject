@@ -17,6 +17,7 @@
               <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
               <input type="text" name="type_id" value="{{ type_id }}" style="display: none;">
               <input type="text" name="state_id" value="{{ state_id }}" style="display: none;">
+              <input type="text" name="city_id" value="" style="display: none;">
               {% block content5 %}
               {% endblock %}
           </form>
@@ -30,12 +31,20 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        var inputTag = clickTarget.find('input')
-        var city_id= inputTag.attr('data-id');
+        let checkObj = document.getElementsByClassName('city_id');
+        let length = checkObj.length;
+        let checked = 0;
+        let city_id;
 
-        var form = $('#dataform')
+        for (i = 0; i < length ; i++) {
+            checked += 1;
+            city_id = checkObj[i].getAttribute('city_id');
+        }
+
+        var form = $('#dataform');
         $('[name=city_id]').val(city_id);
         form.submit();
+      };
 
       $('#multisort2 a.come').on('click', callBack);
     </script>

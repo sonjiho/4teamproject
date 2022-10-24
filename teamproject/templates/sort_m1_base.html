@@ -12,6 +12,7 @@
               <form id="dataform" method="get" action="/appfordog/sort_r2/#radiosort2">
                   <input type="text"  name="result_r1" value="{{  results.result_r1  }}"  style="display: none;">
                   <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
+                  <input type="text" name="type_id" value="">
               {% block content4 %}
               {% endblock %}
               </form>
@@ -29,14 +30,21 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        var inputTag = clickTarget.find('input')
-        var type_id= inputTag.attr('data-id');
+        let checkObj = document.getElementsByClassName('type_id');
+        let length = checkObj.length;
+        let checked = 0;
+        let type_id;
 
-        var form = $('#dataform')
+        for (i = 0; i < length ; i++) {
+            checked += 1;
+            type_id = checkObj[i].getAttribute('type_id');
+        }
+
+        var form = $('#dataform');
         $('[name=type_id]').val(type_id);
         form.submit();
-
       };
+
       $('#multisort1 a.next').on('click', callBack);
    </script>
 {% endblock %}
