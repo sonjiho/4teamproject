@@ -14,6 +14,10 @@
               <input type="text"  name="result_r1" value="{{  results.result_r1  }}"  style="display: none;">
               <input type="text"  name="result_m1" value="{{  results.result_m1  }}"  style="display: none;">
               <input type="text"  name="result_r2" value="{{  results.result_r2  }}"  style="display: none;">
+              <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
+              <input type="text" name="type_id" value="{{ type_id }}" style="display: none;">
+              <input type="text" name="state_id" value="{{ state_id }}" style="display: none;">
+              <input type="text" name="city_id" value="" style="display: none;">
               {% block content5 %}
               {% endblock %}
           </form>
@@ -27,9 +31,21 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        var form = $('#dataform')
+        let checkObj = document.getElementsByClassName('city_id');
+        let length = checkObj.length;
+        let checked = 0;
+        let city_id;
+
+        for (i = 0; i < length ; i++) {
+            checked += 1;
+            city_id = checkObj[i].getAttribute('city_id');
+        }
+
+        var form = $('#dataform');
+        $('[name=city_id]').val(city_id);
         form.submit();
       };
+
       $('#multisort2 a.come').on('click', callBack);
     </script>
 {% endblock %}

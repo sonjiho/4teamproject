@@ -46,8 +46,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=45)),
-                ('addrone', models.CharField(max_length=45)),
-                ('addrtwo', models.CharField(max_length=45)),
+                ('addr', models.CharField(max_length=45)),
+                ('lat', models.IntegerField()),
+                ('lon', models.IntegerField()),
                 ('city', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='mainapp.city')),
                 ('type', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='mainapp.type')),
             ],

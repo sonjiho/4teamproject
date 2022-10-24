@@ -16,7 +16,6 @@ class Category(models.Model):
     def __str__(self):
         return f"id={self.id}, categoryname={self.categoryname}"
 
-
 class Type(models.Model):
     typename = models.CharField(max_length=45)
     category = models.OneToOneField(Category, on_delete=models.CASCADE)
@@ -25,12 +24,13 @@ class Type(models.Model):
 
 class Dogplace(models.Model):
     name = models.CharField(max_length=45)
-    addrone = models.CharField(max_length=45)
-    addrtwo = models.CharField(max_length=45)
+    addr = models.CharField(max_length=45)
+    lon = models.IntegerField()
+    lat = models.IntegerField()
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     def __str__(self):
-        return f"id={self.id}, name{self.name}, addrone{self.addrone}, addrtwo{self.addrtwo}, city{self.city}, type{self.type}"
+        return f"id={self.id}, name{self.name}, addr{self.addr}, lon{self.lon},lat{self.lat}, city{self.city}, type{self.type}"
 
 class DMap(models.Model):
     major_class = models.CharField(max_length=20)
