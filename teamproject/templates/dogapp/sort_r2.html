@@ -13,17 +13,17 @@
       <div class="column" style="column-count: 3;">
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m2_1/#portfolio">서울특별시</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m2_1/#portfolio" data-id="3">서울특별시</a></h3>
           </div>
         </div>
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m2_2/#portfolio">인천광역시</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m2_2/#portfolio" data-id="2">인천광역시</a></h3>
           </div>
         </div>
         <div class="aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m2_3/#portfolio">경기도</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m2_3/#portfolio" data-id="1">경기도</a></h3>
           </div>
         </div>
       </div>
@@ -34,6 +34,8 @@
     <input type="text"  name="result_r1" value="{{  results.result_r1  }}"  style="display: none;">
     <input type="text"  name="result_m1" value="{{  results.result_m1  }}"  style="display: none;">
     <input type="text" name="result_r2" value="" style="display: none;">
+    <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
+    <input type="text" name="type_id" value="{{ type_id }}" style="display: none;">
   </form>
 
   <script type="text/javascript">
@@ -44,8 +46,10 @@
         var url = aTag.attr('data-href');
         var form = $('#dataform')
         form.attr('action', url);
+        var state_id = aTag.attr('data-id');
 
         $('[name=result_r2]').val(text);
+        $('[name=state_id]').val(state_id);
         form.submit();
       };
       $('#radiosort2 div.icon-box').on('click', callBack);

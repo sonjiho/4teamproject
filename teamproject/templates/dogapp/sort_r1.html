@@ -14,32 +14,32 @@
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
          <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
            <div class="icon-box">
-             <h3><a href='#'  data-href="/appfordog/sort_m1_1/#features">반려 동반 가능 식당</a></h3>
+             <h3><a href='#'  data-href="/appfordog/sort_m1_1/#features" data-id="2">반려 동반 가능 식당</a></h3>
            </div>
         </div>
         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m1_2/#features">반려 동반 가능 카페</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m1_2/#features" data-id="4">반려 동반 가능 카페</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m1_3/#features">애견 카페</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m1_3/#features" data-id="5">애견 카페</a></h3>
          </div>
         </div>
         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m1_4/#features">반려 동반 가능 숙소</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m1_4/#features" data-id="1">반려 동반 가능 숙소</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
           <div class="icon-box">
-            <h3><a href='#'  data-href="/appfordog/sort_m1_5/#features">반려 동반 가능 여행지</a></h3>
+            <h3><a href='#'  data-href="/appfordog/sort_m1_5/#features" data-id="3">반려 동반 가능 여행지</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-5" style="width: 260px; height: 90px; background-size: cover; background-color: #f1f1f1; margin: 25px; padding-top: 20px;">
           <div class="icon-box">
-            <h3 ><a href='#'  data-href="/appfordog/sort_end/">반려 동반 가능 휴게소</a></h3>
+            <h3 ><a href='#'  data-href="/appfordog/sort_end/" data-id="6">반려 동반 가능 휴게소</a></h3>
           </div>
         </div>
       </div>
@@ -54,9 +54,12 @@
         var url = aTag.attr('data-href');
         var form = $('#dataform')
         form.attr('action', url);
+        var category_id = aTag.attr('data-id');
 
         $('[name=result_r1]').val(text);
+        $('[name=category_id]').val(category_id);
         form.submit();
+
       };
       $('#radiosort1 div.icon-box').on('click', callBack);
   </script>
