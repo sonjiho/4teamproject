@@ -31,3 +31,16 @@ class Dogplace(models.Model):
     type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     def __str__(self):
         return f"id={self.id}, name{self.name}, addrone{self.addrone}, addrtwo{self.addrtwo}, city{self.city}, type{self.type}"
+
+class DMap(models.Model):
+    major_class = models.CharField(max_length=20)
+    sub_class = models.CharField(max_length=10)
+    name = models.CharField(max_length=20)
+    address = models.CharField(max_length=50)
+    city = models.CharField(max_length=10)
+    state = models.CharField(max_length=10)
+    road_name = models.CharField(max_length=50)
+    latlng = models.CharField(max_length=50)
+    etc = models.CharField(max_length=50, null=True)
+    def __str__(self):
+        return self.name + ":" + str(self.city) + " " + str(self.state) + " " + str(self.road_name)
