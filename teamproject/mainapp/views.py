@@ -4,6 +4,8 @@ from django.http import HttpResponse, JsonResponse
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
 from mainapp.models import DMap
+
+
 def mainpage(request):
     return render(request, 'dogapp/sort_r1.html')
 
