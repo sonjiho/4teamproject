@@ -15,9 +15,10 @@
               <input type="text"  name="result_m1" value="{{  results.result_m1  }}"  style="display: none;">
               <input type="text"  name="result_r2" value="{{  results.result_r2  }}"  style="display: none;">
               <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
-              <input type="text" name="type_id" value="{{ type_id }}" style="display: none;">
+              {% for id in type_id %}
+                <input type="text" name="type_id" value="{{ id }}" style="display: none;">
+              {% endfor %}
               <input type="text" name="state_id" value="{{ state_id }}" style="display: none;">
-              <input type="text" name="city_id" value="" style="display: none;">
               {% block content5 %}
               {% endblock %}
           </form>
@@ -31,12 +32,13 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        var checkedInputs = $('.city_id:checked');
+        var checkedInputs = $('[name=result_m2]:checked');
         $(checkedInputs).each(function(i, input){
             var checkedInput = $(input);
             var idInput = checkedInput.closest('li').find('input:eq(0)');
             idInput.trigger('click');
         });
+
         var form = $('#dataform');
         form.submit();
       };

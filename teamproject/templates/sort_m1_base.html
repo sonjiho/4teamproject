@@ -12,7 +12,6 @@
               <form id="dataform" method="get" action="/appfordog/sort_r2/#radiosort2">
                   <input type="text"  name="result_r1" value="{{  results.result_r1  }}"  style="display: none;">
                   <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
-                  <input type="text" name="type_id" value="">
               {% block content4 %}
               {% endblock %}
               </form>
@@ -30,7 +29,7 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        var checkedInputs = $('.type_id:checked');
+        var checkedInputs = $('[name=result_m1]:checked');
         $(checkedInputs).each(function(i, input){
             var checkedInput = $(input);
             var idInput = checkedInput.closest('h4').find('input:eq(0)');
