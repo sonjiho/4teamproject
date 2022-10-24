@@ -31,18 +31,13 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        let checkObj = document.getElementsByClassName('city_id');
-        let length = checkObj.length;
-        let checked = 0;
-        let city_id;
-
-        for (i = 0; i < length ; i++) {
-            checked += 1;
-            city_id = checkObj[i].getAttribute('city_id');
-        }
-
+        var checkedInputs = $('.city_id:checked');
+        $(checkedInputs).each(function(i, input){
+            var checkedInput = $(input);
+            var idInput = checkedInput.closest('li').find('input:eq(0)');
+            idInput.trigger('click');
+        });
         var form = $('#dataform');
-        $('[name=city_id]').val(city_id);
         form.submit();
       };
 
