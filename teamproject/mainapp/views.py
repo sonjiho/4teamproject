@@ -87,8 +87,8 @@ def sort_r2(request):
         result_m1 = request.GET.getlist("result_m1","")
         category_id = request.GET.get('category_id')
         type_id = request.GET.getlist('type_id')
-        for f  in type_id:
-            type_ids += f
+        for f  in type_id :
+            type_ids += f + ", "
         context = {
             'results': {
                 'result_r1': result_r1 ,
@@ -170,39 +170,41 @@ def sort_end(request):
     context=""
     city_ids=""
     result_m2 = []
-    if request.method == 'GET' and len(result_m2) > 0:
-        result_r1 = request.GET.get('result_r1',"")
-        result_m1 = request.GET.get("result_m1","")
-        result_r2 = request.GET.get('result_r2',"")
-        result_m2 = request.GET.getlist("result_m2","")
-        category_id = request.GET.get('category_id')
-        type_id = request.GET.get('type_id')
-        state_id = request.GET.get('state_id')
-        city_id = request.GET.getlist('city_id')
-        for r in city_id:
-            city_ids += r
-
-        context = {
-            'results': {
-                'result_r1': result_r1 ,
-                'result_m1': result_m1,
-                'result_r2': result_r2,
-                'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개")
-            },
-            'category_id':category_id,
-            'type_id': type_id,
-            'state_id': state_id,
-            'city_id' : city_ids
-        }
-
-    else :
+    if request.method == 'GET':
         result_r1 = request.GET.get('result_r1')
         category_id = request.GET.get('category_id')
+        if category_id=="6":
+            context = {
+                'results': {
+                    'result_r1': result_r1
+                },
+                'category_id': category_id
+            }
+            return render(request, 'dogapp/sort_end.html', context)
 
-        context = {
-            'results': {
-                'result_r1': result_r1
-            },
-            'category_id':category_id
-        }
-    return render(request, 'dogapp/sort_end.html', context)
+        else:
+            result_m1 = request.GET.get("result_m1","")
+            result_r2 = request.GET.get('result_r2',"")
+            result_m2 = request.GET.getlist("result_m2","")
+            category_id = request.GET.get('category_id')
+            type_id = request.GET.get('type_id')
+            state_id = request.GET.get('state_id')
+            city_id = request.GET.getlist('city_id')
+            for r in city_id:
+                city_ids += r
+
+            context = {
+                'results': {
+                    'result_r1': result_r1,
+                    'result_m1': result_m1,
+                    'result_r2': result_r2,
+                    'result_m2': (result_m2 [0] + " 외 " + str(len(result_m2)-1) + "개")
+                },
+                'category_id':category_id,
+                'type_id': type_id,
+                'state_id': state_id,
+                'city_id' : city_ids
+            }
+
+            print(context)
+        return render(request, 'dogapp/sort_end.html', context)

@@ -30,18 +30,13 @@
 
     <script type="text/javascript">
       var callBack = function(event){
-        let checkObj = document.getElementsByClassName('type_id');
-        let length = checkObj.length;
-        let checked = 0;
-        let type_id;
-
-        for (i = 0; i < length ; i++) {
-            checked += 1;
-            type_id = checkObj[i].getAttribute('type_id');
-        }
-
+        var checkedInputs = $('.type_id:checked');
+        $(checkedInputs).each(function(i, input){
+            var checkedInput = $(input);
+            var idInput = checkedInput.closest('h4').find('input:eq(0)');
+            idInput.trigger('click');
+        });
         var form = $('#dataform');
-        $('[name=type_id]').val(type_id);
         form.submit();
       };
 
