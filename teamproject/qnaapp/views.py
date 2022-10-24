@@ -40,7 +40,7 @@ def question_create(request):
 def answer_create(request, question_id):
     """질문 답변 등록"""
     question= get_object_or_404(Question, pk=question_id)
-    if request.method =="POST":
+    if request.method == "POST":
         form = AnswerForm(request.POST)
         if form.is_valid():
             answer = form.save(commit=False)

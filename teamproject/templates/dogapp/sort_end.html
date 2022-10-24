@@ -21,65 +21,66 @@
               <div class="content d-flex flex-column justify-content-center">
                 <h3>얼른 출발 하시개!</h3>
                     <div id="map" style="width:100%; height:600px;"></div>
-                    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6075751d111977dfe10aaa2dec967efd"></script>
+                  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6075751d111977dfe10aaa2dec967efd"></script>
                     <script>
                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                             mapOption = {
-                                center: new kakao.maps.LatLng(37.56546, 126.97689), // 지도의 중심좌표
+                                center: new kakao.maps.LatLng(37.56546, 126.97689), // 지도의 중심 좌표
                                 level: 3 // 지도의 확대 레벨
                                 }
 
-                        // 지도를 생성한다
+                        // 지도를 생성 한다
                         var map = new kakao.maps.Map(mapContainer, mapOption);
 
-                        // for (var i=0; i < {{  len_result }}, i++ ){
-                        // var Positions = [
-                           // {
-                 //              content: '<div>{{  total_result  }}</div><br><div>{{ total_result  }}</div>',
-                   //            latlng: new kakao.maps.LatLng({{  lat_result  }}, {{  lon_result  }})
-                     //       };
-                       // }
 
-//                        for (var i = 0; i < positions.length; i ++) {
-  //                          // 마커를 생성합니다
-    //                        var marker = new kakao.maps.Marker({
-      //                          map: map, // 마커를 표시할 지도
-        //                        position: positions.latlng // 마커의 위치
-          //                  });
-//
+
+                        var positions = [
+                            {% for dogplace in total_result %}
+                            {
+                                content: '<div>{{dogplace.name}}</div>',
+                                latlng: new kakao.maps.LatLng({{dogplace.lat}}, {{dogplace.lon}})
+                            },
+                            {% endfor %}
+                        ];
+
+                        for (var i = 0; i < positions.length; i ++) {
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                                map: map, // 마커를 표시할 지도
+                                position: positions[i].latlng // 마커의 위치
+                            });
+
                             // 마커에 표시할 인포윈도우를 생성합니다
-  //                          var infowindow = new kakao.maps.InfoWindow({
-    //                            content: positions.content // 인포윈도우에 표시할 내용
-      //                      });
+                            var infowindow = new kakao.maps.InfoWindow({
+                                content: positions[i].content // 인포윈도우에 표시할 내용
+                            });
 
                             // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
                             // 이벤트 리스너로는 클로저를 만들어 등록합니다
                             // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-        //                    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-          //                  kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-            //            }
+                            kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+                            kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+                        }
 
                         // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
-              //          function makeOverListener(map, marker, infowindow) {
-                //            return function() {
-                  //              infowindow.open(map, marker);
-                    //        };
-                      //  }
+                        function makeOverListener(map, marker, infowindow) {
+                            return function() {
+                                infowindow.open(map, marker);
+                            };
+                        }
 
                         // 인포윈도우를 닫는 클로저를 만드는 함수입니다
- //                       function makeOutListener(infowindow) {
-   //                         return function() {
-     //                           infowindow.close();
-       //                     };
-         //               }
-
+                        function makeOutListener(infowindow) {
+                            return function() {
+                                infowindow.close();
+                            };
+                        }
 
                         // 지도에 확대 축소 컨트롤을 생성한다
-       //                 var zoomControl = new kakao.maps.ZoomControl();
+                        var zoomControl = new kakao.maps.ZoomControl();
 
                         // 지도의 우측에 확대 축소 컨트롤을 추가한다
-       //                 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
+                        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
                     </script>
                  </div>
               </div>
@@ -89,12 +90,16 @@
                  </div>
                  <div id="count-box">
                      <div style="padding: 15px 0 0 0; margin: 0 0 0 50px; font-family: 'Raleway', sans-serif; font-size: 36px; color: #3b3b3b; width: 760px;">
-                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{  len_result  }}" data-purecounter-duration="2" class="purecounter"   style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
-                         <ol>
-                         {% for data in Result %}
-                            <li><h4 style="font-size:20px; font-weight:800">{{ name_result }}</h4> <h6 style="font-size:13px">{{ addr_result }}</h6></li>
-                         {% endfor %}
-                         </ol>
+                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{  len_result  }}" data-purecounter-duration="2" class="purecounter" style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
+                         <div class="container">
+                             {% for dogplace in total_result %}
+                             <tr>
+                                 <td class="text-left">
+                                     <a style="font-size:20px; font-weight:800">{{  dogplace.name  }}</a> <p style="font-size:13px">{{ dogplace.city.state.statename }} {{ dogplace.city.cityname }} {{  dogplace.addr  }}</p>
+                                 </td>
+                             {% endfor %}
+                             </tr>
+                         </div>
                      </div>
                  </div>
               </div>
