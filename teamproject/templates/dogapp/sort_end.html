@@ -90,15 +90,18 @@
                  </div>
                  <div id="count-box">
                      <div style="padding: 15px 0 0 0; margin: 0 0 0 50px; font-family: 'Raleway', sans-serif; font-size: 36px; color: #3b3b3b; width: 760px;">
-                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{  len_result  }}" data-purecounter-duration="2" class="purecounter" style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
+                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{  len_result  }}" data-purecounter-duration="0.5" class="purecounter" style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
                          <div class="container">
-                             {% for dogplace in total_result %}
-                             <tr>
-                                 <td class="text-left">
-                                     <a style="font-size:20px; font-weight:800">{{  dogplace.name  }}</a> <p style="font-size:13px">{{ dogplace.city.state.statename }} {{ dogplace.city.cityname }} {{  dogplace.addr  }}</p>
-                                 </td>
-                             {% endfor %}
-                             </tr>
+                             <div onscroll="myFunction()" style="width: 50%; height: 530px; overflow: scroll;">
+                                 {% for dogplace in total_result %}
+                                 <tr>
+                                     <td class="text-left">
+                                         <a style="font-size:20px; font-weight:800">{{  dogplace.name  }}</a>
+                                         <p style="font-size:13px">{{ dogplace.city.state.statename }} {{ dogplace.city.cityname }} {{  dogplace.addr  }}</p>
+                                     </td>
+                                 {% endfor %}
+                                 </tr>
+                             </div>
                          </div>
                      </div>
                  </div>

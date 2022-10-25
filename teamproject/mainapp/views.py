@@ -1,4 +1,3 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Dogplace
 
@@ -205,5 +204,4 @@ def sort_end(request):
                 'total_result': total_result,
                 'len_result': len_result
             }
-            print(context)
             return render(request, 'dogapp/sort_end.html', context)
