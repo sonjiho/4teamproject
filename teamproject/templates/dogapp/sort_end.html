@@ -4,14 +4,15 @@
 
 {% block content2 %}
     <form id="dataform" method="get">
-          <input name="result_r1"  style="display: none;" type="text"  value="{{  results.result_r1  }}">
-          <input name="result_m1"  style="display: none;" type="text"  value="{{  results.result_m1  }}">
-          <input name="result_r2"  style="display: none;" type="text"  value="{{  results.result_r2  }}">
-          <input name="category_id" style="display: none;" type="text" value="{{ category_id }}">
-          <input name="type_id" style="display: none;" type="text" value="{{ type_id }}">
-          <input name="state_id" style="display: none;" type="text" value="{{ state_id }}">
-          <input name="city_id" style="display: none;" type="text" value="{{ city_id }}">
-</form>
+          <input name="result_r1" style="display: none;" type="text" value="{{  results.result_r1  }}">
+          <input name="result_m1" style="display: none;" type="text" value="{{  results.result_m1  }}">
+          <input name="result_r2" style="display: none;" type="text" value="{{  results.result_r2  }}">
+          <input name="result_m2" style="display: none;" type="text" value="{{  results.result_m2  }}">
+          <input name="category_id" style="display: none;" type="text" value="{{  category_id  }}">
+          <input name="type_id" style="display: none;" type="text" value="{{  type_id  }}">
+          <input name="state_id" style="display: none;" type="text" value="{{  state_id  }}">
+          <input name="city_id" style="display: none;" type="text" value="{{  city_id  }}">
+    </form>
   <!-- ======= Counts Section ======= -->
     <section class="counts" id="counts">
         <div class="container" data-aos="fade-up">
@@ -83,7 +84,7 @@
                     </script>
                  </div>
               </div>
-              <div class="column" style="column-width: 400px;">
+              <div class="column" style="column-count: 2;">
                  <div id="image">
                       <img alt="" src="{% static 'img/car_dog1.jpg' %}" style="height: 100%;">
                  </div>
