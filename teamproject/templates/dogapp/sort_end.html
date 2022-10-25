@@ -4,16 +4,16 @@
 
 {% block content2 %}
     <form id="dataform" method="get">
-          <input type="text"  name="result_r1" value="{{  results.result_r1  }}"  style="display: none;">
-          <input type="text"  name="result_m1" value="{{  results.result_m1  }}"  style="display: none;">
-          <input type="text"  name="result_r2" value="{{  results.result_r2  }}"  style="display: none;">
-          <input type="text" name="category_id" value="{{ category_id }}" style="display: none;">
-          <input type="text" name="type_id" value="{{ type_id }}" style="display: none;">
-          <input type="text" name="state_id" value="{{ state_id }}" style="display: none;">
-          <input type="text" name="city_id" value="{{ city_id }}" style="display: none;">
+          <input name="result_r1"  style="display: none;" type="text"  value="{{  results.result_r1  }}">
+          <input name="result_m1"  style="display: none;" type="text"  value="{{  results.result_m1  }}">
+          <input name="result_r2"  style="display: none;" type="text"  value="{{  results.result_r2  }}">
+          <input name="category_id" style="display: none;" type="text" value="{{ category_id }}">
+          <input name="type_id" style="display: none;" type="text" value="{{ type_id }}">
+          <input name="state_id" style="display: none;" type="text" value="{{ state_id }}">
+          <input name="city_id" style="display: none;" type="text" value="{{ city_id }}">
 </form>
   <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    <section class="counts" id="counts">
         <div class="container" data-aos="fade-up">
           <div class="row no-gutters">
             <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
@@ -26,19 +26,17 @@
                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                             mapOption = {
                                 center: new kakao.maps.LatLng(37.56546, 126.97689), // 지도의 중심 좌표
-                                level: 3 // 지도의 확대 레벨
+                                level: 13 // 지도의 확대 레벨
                                 }
 
                         // 지도를 생성 한다
                         var map = new kakao.maps.Map(mapContainer, mapOption);
 
-
-
                         var positions = [
                             {% for dogplace in total_result %}
                             {
-                                content: '<div>{{dogplace.name}}</div>',
-                                latlng: new kakao.maps.LatLng({{dogplace.lat}}, {{dogplace.lon}})
+                                content: '<div>{{  dogplace.name  }}</div><br><div>{{  dogplace.city.state.statename  }} {{  dogplace.city.cityname  }} {{  dogplace.addr  }}</div>',
+                                latlng: new kakao.maps.LatLng({{  dogplace.lat  }}, {{  dogplace.lon  }})
                             },
                             {% endfor %}
                         ];
@@ -81,16 +79,17 @@
 
                         // 지도의 우측에 확대 축소 컨트롤을 추가한다
                         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
                     </script>
                  </div>
               </div>
               <div class="column" style="column-width: 400px;">
                  <div id="image">
-                      <img src="{% static 'img/car_dog1.jpg' %}" style="height: 100%;" alt="">
+                      <img alt="" src="{% static 'img/car_dog1.jpg' %}" style="height: 100%;">
                  </div>
                  <div id="count-box">
                      <div style="padding: 15px 0 0 0; margin: 0 0 0 50px; font-family: 'Raleway', sans-serif; font-size: 36px; color: #3b3b3b; width: 760px;">
-                         총 검색 결과:<span data-purecounter-start="0" data-purecounter-end="{{  len_result  }}" data-purecounter-duration="0.5" class="purecounter" style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
+                         총 검색 결과:<span class="purecounter" data-purecounter-duration="0.5" data-purecounter-end="{{  len_result  }}" data-purecounter-start="0" style="font-size: 36px;  line-height: 30px;  font-weight: 700;  color: #c6e1ff;  margin-left: 20px; "></span>
                          <div class="container">
                              <div onscroll="myFunction()" style="width: 50%; height: 530px; overflow: scroll;">
                                  {% for dogplace in total_result %}
