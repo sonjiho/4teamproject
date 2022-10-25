@@ -166,7 +166,7 @@ def sort_end(request):
         result_r1 = request.GET.get('result_r1', "")
         category_id = request.GET.get('category_id', "")
         if category_id == "6":
-            total_result = Dogplace.objects.filter(type__id__in="29")
+            total_result = Dogplace.objects.filter(type_id="29")
             len_result = len(total_result)
 
             context = {
