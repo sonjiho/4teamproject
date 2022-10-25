@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Dogplace
+from django.db.models import Avg
 
 
 def mainpage(request):
@@ -161,46 +162,51 @@ def sort_m2_3(request):
 
 
 def sort_end(request):
+
     if request.method == 'GET':
         result_r1 = request.GET.get('result_r1', "")
-        category_id = request.GET.get('category_id', "")
-        if category_id == "6":
-            total_result = Dogplace.objects.filter(type_id="29")
-            len_result = len(total_result)
+        result_m1 = request.GET.get("result_m1", "")
+        result_r2 = request.GET.get('result_r2', "")
+        result_m2 = request.GET.getlist("result_m2", "")
+        type_id = request.GET.getlist('type_id', "")
+        city_id = request.GET.getlist('city_id', "")
+        total_result = Dogplace.objects.filter(city_id__in=city_id) & Dogplace.objects.filter(type_id__in=type_id)
+        len_result = len(total_result)
+        avg_lat = total_result.aggregate(Avg('lat'))
+        avg_lng = total_result.aggregate(Avg('lon'))
+        context = {
+            'results': {
+                'result_r1': result_r1,
+                'result_m1': result_m1,
+                'result_r2': result_r2,
+                'result_m2': (result_m2[0] + " 외 " + str(len(result_m2) - 1) + "개"),
+            },
+            'type_id': type_id,
+            'city_id': city_id,
+            'total_result': total_result,
+            'len_result': len_result,
+            'avg_lat': avg_lat["lat__avg"],
+            'avg_lng': avg_lng["lon__avg"]
+        }
+    return render(request, 'dogapp/sort_end.html', context)
 
-            context = {
-                'results': {
-                    'result_r1': result_r1
-                },
-                'category_id': category_id,
-                'total_result': total_result,
-                'len_result': len_result
-            }
 
-            return render(request, 'dogapp/sort_end.html', context)
+def sort_end_hu(request):
 
-        else:
-            result_m1 = request.GET.get("result_m1", "")
-            result_r2 = request.GET.get('result_r2', "")
-            result_m2 = request.GET.getlist("result_m2", "")
-            category_id = request.GET.get('category_id', "")
-            type_id = request.GET.getlist('type_id', "")
-            state_id = request.GET.get('state_id', "")
-            city_id = request.GET.getlist('city_id', "")
-            total_result = Dogplace.objects.filter(city_id__in=city_id) & Dogplace.objects.filter(type_id__in=type_id)
-            len_result = len(total_result)
-            context = {
-                'results': {
-                    'result_r1': result_r1,
-                    'result_m1': result_m1,
-                    'result_r2': result_r2,
-                    'result_m2': (result_m2[0] + " 외 " + str(len(result_m2) - 1) + "개"),
-                },
-                'category_id': category_id,
-                'type_id': type_id,
-                'state_id': state_id,
-                'city_id': city_id,
-                'total_result': total_result,
-                'len_result': len_result
-            }
-            return render(request, 'dogapp/sort_end.html', context)
+    if request.method == 'GET':
+        result_r1 = request.GET.get('result_r1', "")
+        total_result = Dogplace.objects.filter(type_id="29")
+        len_result = len(total_result)
+        avg_lat = total_result.aggregate(Avg('lat'))
+        avg_lng = total_result.aggregate(Avg('lon'))
+
+        context = {
+            'results': {
+                'result_r1': result_r1
+            },
+            'total_result': total_result,
+            'len_result': len_result,
+            'avg_lat': avg_lat["lat__avg"],
+            'avg_lng': avg_lng["lon__avg"]
+        }
+    return render(request, 'dogapp/sort_end_hu.html', context)

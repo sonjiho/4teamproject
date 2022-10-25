@@ -5,13 +5,8 @@
 {% block content2 %}
     <form id="dataform" method="get">
           <input name="result_r1" style="display: none;" type="text" value="{{  results.result_r1  }}">
-          <input name="result_m1" style="display: none;" type="text" value="{{  results.result_m1  }}">
-          <input name="result_r2" style="display: none;" type="text" value="{{  results.result_r2  }}">
-          <input name="result_m2" style="display: none;" type="text" value="{{  results.result_m2  }}">
           <input name="category_id" style="display: none;" type="text" value="{{  category_id  }}">
-          <input name="type_id" style="display: none;" type="text" value="{{  type_id  }}">
-          <input name="state_id" style="display: none;" type="text" value="{{  state_id  }}">
-          <input name="city_id" style="display: none;" type="text" value="{{  city_id  }}">
+          <input name="type_id" style="display: none;" type="text" value="29">
     </form>
   <!-- ======= Counts Section ======= -->
     <section class="counts" id="counts">
@@ -27,8 +22,8 @@
                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                             mapOption = {
                                 center: new kakao.maps.LatLng({{ avg_lat }}, {{ avg_lng }}), // 지도의 중심 좌표
-                                level: 8 // 지도의 확대 레벨
-                                }
+                                level: 12 // 지도의 확대 레벨
+                            };
 
                         // 지도를 생성 한다
                         var map = new kakao.maps.Map(mapContainer, mapOption);

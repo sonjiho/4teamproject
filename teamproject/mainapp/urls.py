@@ -15,4 +15,5 @@ urlpatterns = [
     path('sort_m2_2/', sort_m2_2, name='sort_m2_2'),
     path('sort_m2_3/', sort_m2_3, name='sort_m2_3'),
     path('sort_end/', sort_end, name='sort_end'),
+    path('sort_end_hu/', sort_end_hu, name='sort_end_hu')
 ]
