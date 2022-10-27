@@ -2,13 +2,19 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
-def index(request) :
+
+def index(request):
     context = None
     print(request.user.is_authenticated)
     print(request.user)
     if request.user.is_authenticated:
         context = {'logineduser': request.user}
     return render(request, 'dogapp/login_index.html', context)
+
+
+def index2(request):
+    return render(request, 'dogapp/login_index2.html')
+
 
 def register(request):
     res_data = None
@@ -24,12 +30,11 @@ def register(request):
         elif password != re_password:
             res_data['error']='비밀번호가 다릅니다.'
         else:
-            user = User.objects.create_user(username = useremail,
-                            first_name = firstname,
-                            last_name = lastname,
-                            password = password)
-            auth.login(request, user)
-            return redirect("account:index")
+            user = User.objects.create_user(username=useremail,
+                            first_name=firstname,
+                            last_name=lastname,
+                            password=password)
+            return redirect("account:index2")
     return render(request, 'dogapp/login_register.html', res_data)
 
 
