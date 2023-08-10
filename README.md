@@ -4,4 +4,4 @@
 #### 팀명 : 일등하개 점수 좀 주시개
 #### 팀원 : 김주희, 이진태, 손지호
 
-Website : https://gogl323.pythonanywhere.com/appfordog/
+Website : https://oochoo.pythonanywhere.com/appfordog/
